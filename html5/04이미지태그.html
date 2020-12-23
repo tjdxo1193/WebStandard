@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지태그</title>
+</head>
+<body>
+<h1>이미지태그</h1>
+
+<h2>이미지</h2>
+<p><img src = "https://t1.daumcdn.net/daumtop_chanel/op/20201222063205918.png" loading="lazy"></p>
+<p><img src = "https://www.google.com/logos/doodles/2020/december-holidays-days-2-30-6753651837108830.3-law.gif" loading="lazy"></p>
+<p><img src = "../img/free-icon-violin-3925116.png" width = "40%" height="40%" loading="lazy"></p>
+<p><img src = "../img/20201124124346.jpg" width = "40%" height="40%" loading="lazy"></p>
+<p><img src = "../img/htm_20190520122150856123.jpeg" loading="lazy"></p>
+<hr>
+<p><a href="//daum.net"><img src = "https://t1.daumcdn.net/daumtop_chanel/op/20201222063205918.png"
+    width = "180" height="94" loading="lazy"></a></p>
+<p><a href="//google.com"><img src = "https://www.google.com/logos/doodles/2020/december-holidays-days-2-30-6753651837108830.3-law.gif" loading="lazy"></a></p>
+<hr>
+<h2>이미지 보조설명 : alt</h2>
+<p>
+<img src = "data:image/png" alt = "구글로고"></p>
+<hr>
+<h2>이미지 제목 : figcaption</h2>
+<figure>
+    <img src = "https://t1.daumcdn.net/daumtop_chanel/op/20201222063205918.png">
+    <figcaption>그림 1-1. daum.net 로고</figcaption>
+</figure>
+
+<figure>
+    <figcaption>그림 1-2. daum.net 로고</figcaption>
+    <img src = "https://t1.daumcdn.net/daumtop_chanel/op/20201222063205918.png">
+</figure>
+
+</body>
+</html>
+
+<!--
+이미지 image
+웹문서에 이미지를 삽입하는 태그
+주요속성은 src, alt, width, height, loading 등임
+src : 문서에 나타낼 이미지의 경로를 설정
+      이미지의 크기는 원본크기대로 출력
+      크기를 재조정하고 싶으면 width, height를 설정하면 됨
+링크태그에 텍스트레이블 대신 이미지를 지정할 수도 있음
+
+웹에서 사용가능한 이미지들
+gif : graphic interchange format
+      1987년 미국 통신업체인 컴서브에서 개발
+      최대 256색 표현가능, 비손실 압축 지원
+      투명이미지, 애니메이션 지원, 저작권도 있음(2006년 만료)
+
+jpg : joint picture experts group
+      이미지 압축기술자 모임인 JPEG에서 개발
+      RGB/CMYK 모드 지원 (표현가능색상수 백만가지 이상)
+      이미지 압축수준을 조정할 수 있음 <->이미지의 질이 낮아질수 있음
+
+png : portable network graphics
+      GIF의 특허에 대항해서 개발된 포맷
+      JPG, GIF의 장점을 합친 파일 포맷
+      대신 JPG, GIF 보다 이미지 용량이 상대적으로 큼
+      단, 애니메이션은 만들수 없음
+
+이미지 설명 : alternative
+이미지를 불러오지 못하는 경우 이미지를 대신해서
+출력하고픈 내용을 alt 속성으로 정의함
+
+이미지 로딩시점 지정 : loading
+이미지를 불러오는 방식을 지정하려면 loading이라는 속성 사용
+eager : 페이지의 모든 이미지를 불러옴
+lazy : 페이지가 브러우저의 가시영역viewport에 들어오면 그떼사야 불러옴
+       불필요한 이미지 로딩을 줄여서 데이터 소모를 방지할수 있음
+
+이미지 제목 추가 : figure, figcaption
+이미지에 제목을 부여하고 싶다면 figure 태그로 이미지를 둘러싼 후
+figcaption태그로 제목을 작성할 수 있음
+
+http://naver.me/GWKLwXKD  (웹표준 3종)
+
+firefox
+
+getbootstrap,com
+
+koreahtml5.kr
+
+html5text.com
+
+pixlr.com  웹용 포토샵
+
+w3schools.com
+
+html, css, javascript,
+jquery, ajax, bootstrap
+
+codecademy.com
+
+유튜브 - 클론코딩
+
+-->
