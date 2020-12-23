@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>링크태그</title>
+<!--    <base href = "http://localhost:63342/WebStandard/">-->
+</head>
+<body>
+<h1>링크태그</h1>
+<h2>앵커 : a</h2>
+<p> <a href= "http://naver.com">네이버로 이동</a> </p>
+<p> <a href= "http://google.com">구글로 이동</a> </p>
+<p> <a href= "http://daum.net">다음로 이동</a> </p>
+<hr>
+<p> <a href = "http://localhost:63342/WebStandard/html5/01글자태그.html">01글자태그(절대경로=> 비추!)</a></p>
+<p> <a href = "html5/01글자태그.html">01글자태그(절대경로 -> base태그 지정 필요!)</a> </p>
+<p> <a href = "./01글자태그.html">01글자태그(상대경로=>)</a> </p>
+<p> <a href = "./02글자태그.html">02서식태그(상대경로)</a> </p>
+<p> <a href = "../css3/css3.html">css3</a> </p>
+
+</body>
+</html>
+<!--
+하이퍼텍스트 hypertext
+수많은 링크(hypertext)로 구성된 문서를 의미
+링크 : 특정문서에서 다른 문서나 다른 사이트로의 연결을 제공하는 고리
+링크를 통해 동영상, 그림, 문서, 프로그램, 파일, 글등의 특정위치를 지정할 수 있음
+
+앵커 : anchor
+링크를 만들어 주는 태그
+
+링크 상태와 이것이 의미하는 색상
+link    : 한번도 클릭하지 않은 상태(파랑)
+visited : 한번이라도 클릭한 상태(보라)
+hover   : 마우스 포인터를 링크에 올려둔 상태(파랑)
+active  : 링크를 마우스로 누른 상태(빨강)
+
+
+상대경로relative vs 절대경로absolute
+절대경로 : 도메인주소를 시작으로 웹자원의 위치를 의미하는 경로를 지정하는 방식
+상대경로 : 작성중인 파일의 위치를 시작으로 웹자원의 위치를 의미하는 경로를 지정하는 방식
+            ./  : 상대경로에서 현재 위치를 의미
+            ../ : 상대경로에서 한단계 위의 위치를 의미
+
+ex) 현재 left_menu.html을 수정중인데 logo.jpg를 이문서에 포함하려함
+    절대경로 : ~/img/logo.jpg
+    상대경로 : ../../img/logo.jpg
+
+ex) 현재 left_menu.html을 수정중인데 ceo.jpg를 이문서에 포함하려함
+    절대경로 : ~/sub/img/ceo.jpg
+    상대경로 : ../img/ceo.jpg
+
+-->
