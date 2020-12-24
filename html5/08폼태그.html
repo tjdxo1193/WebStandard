@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>폼태그</title>
+</head>
+<body>
+<h1>폼태그</h1>
+<h2>다양한 입력요소 알아보기</h2>
+<form>
+    <div> <input type = "text" name = "date" value="2020-12-24"> </div>
+    <div> <input type = "text" name = "time" value="2020-12-24" disabled = "date"> </div>
+    <div> <button type = "submit">입력완료</button> </div>
+</form>
+<h2>HTML5에서 추가된 요소</h2>
+<form name = "frm3">
+    <div><input type = "date" name = "date" required = "required"></div>
+    <div><input type = "time" name = "time" required = "required"></div>
+    <div><input type = "number" name = "age" min="0" max="100" required = "required"></div>
+    <div><input type = "url" name = "url" required = "required"></div>
+    <div><input type = "email" name = "email" required = "required"></div>
+    <div><input type = "tel" name = "tel" required = "required" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"></div>
+    <div><button type="submit">입력완료</button></div>
+</form>
+</body>
+</html>
+<!--
+폼form
+웹 페이지에서 사용자로부터 어떤 정보를 입력 받아
+input : 사용자로부터 데이터를 입력받을 때 사용하는 태그
+    placeholder - 입력요소에 간단한 안내문구 출력
+    type - 입력받을 데이터의 유형 정의
+            text, password - 문자 데이터
+            textarea - 대량 문자 데이터
+            radio, checkbox, select - 다중 선택 데이터
+            file - 파일 데이터
+            hidden - 데이터 입력없이 전송함(화면상에서는 보이지 않음)
+    value - 폼에 초기값 지정
+    readonly - 폼의 입력을 일시적으로 막음
+    disabled - 폼의 입력을 일시적으로 막고 서버전송도 막음
+    checked - radio, checkbox에 초기선택 설정
+    selected - select에 초기선택 설정
+    size
+    minlength, maxlength
+
+html5에서 추가된 요소
+        date, time - 날짜 , 시간 데이터
+        number - 숫자 데이터
+        email - 이메일 데이터
+        url - 인터넷 주소 입력
+        tel - 전화번호 데이터
+               required : 필수 입력항목임을 지정
+               pattern : 정규표현식을 이용해서 입력유형을 제한함
+http://brackets.io/
+-->
