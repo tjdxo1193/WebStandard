@@ -6,6 +6,94 @@
 </head>
 <body>
 <h1>폼태그</h1>
+<h2>간단한 폼 작성하기</h2>
+<form method="post" name="frm1">
+    <div><label for="userid">아이디</label>
+        <input type="text" id="userid" name="userid"></div>
+    <div><label for="passwd">비밀번호</label>
+        <input type="password" id="passwd" name="passwd"></div>
+    <div><label for="button">아이디</label>
+        <button id="button" type="submit">로그인하기</button></div>
+</form>
+<form name="frm2" method="get">
+    <div><input type="text" name="userid" placeholder="아이디"></div>
+    <div><input type="password" password="passwd" placeholder="비밀번호"></div>
+    <div><label for="gender">성별</label>남 <input type="radio" name="gender" id="gender" value="m">
+        여 <input type="radio" name="gender" value="w"></div>
+    <div><label for="hobby">취미</label>
+        독서 <input type="checkbox" name="hobby" id="hobby" value="book">
+        여행 <input type="checkbox" name="hobby" value="trip">
+        운동 <input type="checkbox" name="hobby" value="sports">
+        민트초코 <input type="checkbox" name="hobby" value="mint">
+    </div>
+    <div><label>생년</label>
+    <select name="byear">
+        <option>1997</option>
+        <option>1998</option>
+        <option>1999</option>
+        <option>2000</option>
+        <option>2001</option>
+        <option>2002</option>
+        <option>2003</option>
+        <option>2004</option>
+        <option>2005</option>
+        <option>2006</option>
+        <option>2007</option>
+        <option>2008</option>
+        <option>2009</option>
+        <option>2010</option>
+        <option>2011</option>
+    </select>
+        월 <select name="byear">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+        </select>
+        일 <select name="byear">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+            <option>19</option>
+            <option>20</option>
+            <option>21</option>
+            <option>22</option>
+            <option>23</option>
+            <option>24</option>
+            <option>25</option>
+            <option>26</option>
+            <option>27</option>
+            <option>28</option>
+            <option>29</option>
+            <option>30</option>
+            <option>33</option>
+        </select></div>
+    <button type="submit">입력완료</button>
+
+</form>
 <h2>다양한 입력요소 알아보기</h2>
 <form>
     <div> <input type = "text" name = "date" value="2020-12-24"> </div>
@@ -27,6 +115,20 @@
 <!--
 폼form
 웹 페이지에서 사용자로부터 어떤 정보를 입력 받아
+클라이언트에서 처리하거나 서버로 전송하려면
+form 태그와 다양한 입력요소를 사용하면 됨
+action  : 클라이언트가 전송한 데이터를 처리할 대상 지정
+          (웹 어플리케이션 서버 필요!)
+enctype : 클라이언트가 전송한 데이터의 유형
+          (텍스트 전용, 혼합(다중:텍스트+알파)
+
+post vs get
+form태그의 method라는 속성을 이용해서
+클라이언트의 데이터를 서버로 전달하는 방식을 정의함
+
+label : 폼의 이름을 붙일 때 사용하는 태그
+        for 라는 속성을 이용해서 관련있는 입력요소의 id를 지정해줘야 함
+
 input : 사용자로부터 데이터를 입력받을 때 사용하는 태그
     placeholder - 입력요소에 간단한 안내문구 출력
     type - 입력받을 데이터의 유형 정의
