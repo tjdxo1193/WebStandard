@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>박스속성</title>
+    <style>
+        #box1 { width: 300px; background: yellow;
+        padding: 25px; border: 5px solid navy;
+        margin: 25px;}
+        #box2 {}
+        #box3 {
+            width: 300px;
+            border: 5px outset grey;
+            border-top-style : dotted;
+            border-left-style : outset;
+            border-right-style : double;
+            border-bottom-style : solid;
+            border-style: dotted dashed double solid;
+
+            border-top-color : yellow;
+            border-right-color: green;
+            border-bottom-color: navy;
+            border-left-color: blue;
+            border-color: #FF0000 darkgray magenta burlywood;
+        }
+        #box4 { width: 300px;
+                margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+<h1>박스모델</h1>
+<div id="box1">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa. Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Mi eget mauris pharetra et. Non tellus orci ac auctor augue. Elit at imperdiet dui accumsan sit. Ornare arcu dui vivamus arcu felis. Egestas integer eget aliquet nibh praesent. In hac habitasse platea dictumst quisque sagittis purus. Pulvinar elementum integer enim neque volutpat ac.
+</div>
+<div id="box2">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa. Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Mi eget mauris pharetra et. Non tellus orci ac auctor augue. Elit at imperdiet dui accumsan sit. Ornare arcu dui vivamus arcu felis. Egestas integer eget aliquet nibh praesent. In hac habitasse platea dictumst quisque sagittis purus. Pulvinar elementum integer enim neque volutpat ac.
+</div>
+<div id="box3">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa. Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Mi eget mauris pharetra et. Non tellus orci ac auctor augue. Elit at imperdiet dui accumsan sit. Ornare arcu dui vivamus arcu felis. Egestas integer eget aliquet nibh praesent. In hac habitasse platea dictumst quisque sagittis purus. Pulvinar elementum integer enim neque volutpat ac.
+</div>
+<div id="box4">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa. Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Mi eget mauris pharetra et. Non tellus orci ac auctor augue. Elit at imperdiet dui accumsan sit. Ornare arcu dui vivamus arcu felis. Egestas integer eget aliquet nibh praesent. In hac habitasse platea dictumst quisque sagittis purus. Pulvinar elementum integer enim neque volutpat ac.
+</div>
+
+</body>
+</html>
+<!--
+CSS 박스 모델
+모든 HTML 요소는 박스 형태의 영역을 지니고 있음
+이러한 박스는 기볹거으로 내용content,
+안쪽여백padding, 바깥여백margin, 테두리border등으로 구성
+
+브라우저는 박스의 기본크기와 속성, 위치를 기반으로 화면에 자리잡음
+
+자동 수평정렬
+margin의 left/right 속성을 auto라고 선언하면
+해당요소를 브라우저 중안에 배치할 수 있음
+
+
+-->
+
+<!--
+테두리
+border-style, border-color, border-widht등의 속성을 가짐
+padding/margin과 마찬가지로 단축 표기식으로 선언할 수 있음
+border: 선두께, 선종류, 선색깔 형태로 정의해야 함
+border-style : dotted, dashed, solid, double, ....
+border-width : thin, thick, medium, 수치값
+
+-->

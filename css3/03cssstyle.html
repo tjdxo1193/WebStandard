@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 연동방법</title>
+    <link rel="stylesheet" href="03cssstyle.css">
+    <style>
+        p {color: orange;}
+        div { color: green;}
+    </style>
+</head>
+<body>
+<h1>CSS 연동방법</h1>
+<p style="color: magenta">ddasdasdasdasd</p>
+<div style = "color: navy">ssssssssssssss</div>
+</body>
+</html>
+<!--
+HTML과 CSS 연동하기
+HTML은 CSS를포함하려면,
+외부 스타일 방식, 내부 스타일 방식, 인라인 스타일 방식 중
+하나를 이용할 수 있음
+
+외부 스타일 방식(협업, css가 많을때, 사이트 만들때 추천!)
+<link rel = "stylesheet" href="CSS파일경로">
+스타일시트 파일을 다운로드해서 적용하기 때문에
+빈번한 네트워크 사용량을 줄여 데이터소모 방지
+
+내부 스타일 방식(프로토타입, 테스트, 양이적을때)
+head태그 사이에 style 태그를 정의하고 css 선언
+html 내부에 css를 포함하는 방법
+보통 테스트용으로 css를 작성한 후
+나중에 외부 스타일 방식으로 바꿈
+
+인라인 스타일 방식(되도록 안씀)
+html 각 요소에 style이라는 속성을 이용해서 css 적용하는 방법
+
+css 적용 우선순위
+인라인 스타일 > 내부 스타일 > 외부 스타일
+단, 우선순위를 강제로 바꾸고 싶다면 !important 이용하면 됨
+
+width, height
+요소의 너비와 높이를 지정할 때 사용
+단, 컨텐츠 영역보다 컨텐츠가 크면 영역을 넘쳐서 표시함
+사용가능 단위는 px, %
+-->
+<!--
+margin/padding 속성
+컨텐츠를 둘러싸고 있는 4개방향(top,right/bottom/left)에 대해 지정가능
+margin,padding은 1개값,2개값,3개값,4개값을 이용해서 지정할수 있음
+한편, -top, -right, -bottom, -left 속성을 이용해서
+세부적으로 margin이나 padding을 조절할수 있음
+-->
