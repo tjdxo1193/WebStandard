@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>position속성</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+        }
+        .static {background: yellow; position: static;}
+        .relative {
+            background: green; position: relative;
+        top: -300px; left: 300px}
+        .base {
+            margin-top: 100px;
+            background: orange;
+        }
+        .relative2 {
+            background: red;
+            top: 50px;
+            left: 100px;
+            position: relative
+            }
+        .absolute {
+            background: navy;
+            color: white;
+            position: absolute;
+            top: 100px;
+            right: 100px;
+        }
+
+        .base2 {
+            position: relative;
+            top: 500px;
+            left: 500px;
+            background: magenta;
+        }
+        .absolute2 {
+            background: purple;
+            color: white;
+            position: absolute;
+            top: 300px;
+            left: 100px;
+        }
+        box2 {
+            background: crimson;
+            width: 100px;
+            height: 100px;}
+        .fixed {
+            position: fixed;
+            top: 50px;
+            right: 50px;}
+        .normal {
+            width: 150px;
+            height: 150px;
+            background: yellow;
+            z-index: 30;
+        }
+        .absolutebox {
+            width: 150px;
+            height: 150px;
+            position: relative;}
+        .red {
+            background: red;
+            top: -50px;
+            right: -50px;
+            z-index: 50;}
+        .green {
+            background: green;
+            top: -100px;
+            right: -100px;
+            z-index: 40;}
+        .blue {
+            background: blue;
+            top: -150px;
+            right: -150px;
+            z-index: -20;}
+
+        .box3 {
+            width: 150px;
+            height: 100px;
+            border: 1px solid red;
+        }
+        .overflow {
+            /*overflow: auto;*/
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+        .overflow2 {
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+<h1>position</h1>
+<div class="box static">static</div>
+<div class="box relative">relative</div>
+<div class="box base">
+    <div class="box relative2">relative2</div>
+</div>
+<div class="box absolute">absolute</div>
+
+<div class="box base2">
+    <div class="box absolute2">absolute2</div>
+
+</div>
+<div class="box2 fixed">장바구니</div>
+<hr>
+<div class="normal">box1</div>
+<div class="red absolutebox">box2</div>
+<div class="green absolutebox">box3</div>
+<div class="blue absolutebox">box4</div>
+<hr>
+
+<div class="box3 overflow">
+    없는 아니한 속에 있는가? 것은 노래하며 있는 보이는 그들은 같은 할지니, 품으며, 만천하의 이것이다. 물방아 우리의 커다란 하여도 사막이다. 있는 것이 얼마나 힘있다. 청춘을 만물은 끓는 살았으며, 무엇을 열매를 약동하다. 있음으로써 그것은 가지에 피고, 없으면 영락과 눈이 들어 봄날의 운다. 이상, 밝은 심장의 인간에 아니더면, 때에, 듣기만 아름다우냐? 되려니와, 넣는 그들은 귀는 청춘 더운지라 풀이 있으랴? 충분히 방지하는 대중을 길을 하였으며, 않는 가진 소리다.이것은 타오르고 피다. 따뜻한 청춘 인간이 어디 부패를 따뜻한 착목한는 그러므로 찬미를 아니다.
+</div>
+<div class="box3 overflow2">
+    <img src="../img/htm_20190520122150856123.jpeg">
+</div>
+
+</body>
+</html>
+<!--
+position
+대상요소의 위치를 정의함 (top, bottom, left, right 속성과 함께 사용)
+
+static : 기본위치 배치 방식
+         위에서 아래로(블록요소)
+         왼쪽에서 오른쪽으로 배치 (인라인 요소)
+
+relative : 상대 위치 배치 방식
+           static으로 선언된 요소를
+
+absolute : 절대좌표 배치방식
+           브라우져 가시영역(document body) 좌상단을 기준으로 좌표속성을 이용해서 배치
+fixed : 고정좌표 배치방식
+        브라우저 가시영역(document body)을 기준으로
+        배치되어 스크롤을 하더라도 언제나 그 위치에 고정배치
+-->
+<!--
+z-index
+z-index는 화면 전면에 출력되는 순서를 지정 할수 있음
+z-index는 큰 값을 지정할수록 다른 요소들 보다 위에 배치됨
+-->
+<!--overflow
+대상요소의 영역을 벗어나는 요소에 대한 처리
+필요에 따라 스크롤바를 표시하면 영역을 벗어나는 요소 모두 출력 가능
+hidden, visble, scroll, auto
+스크롤바를 세세하게 설정할 필요가 있는 경우
+overflow-x overflow-y를 사용하기도함
+-->
