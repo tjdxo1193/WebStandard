@@ -10,35 +10,152 @@
     <!-- CSS STYLE -->
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+
+    <!-- 웹폰트 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="wrap">
-        <div id = "header">
-            <div class="container"></div>
+<!-- 스킵 네비게이션 -->
+<div id="skip">
+    <a href="#cont_nav">전체 메뉴 바로가기</a>
+    <a href="#cont_ban">배너 영역 바로가기</a>
+    <a href="#cont_cont">컨텐츠 영역 바로가기</a>
+</div>
+<!--  //스킵 네비게이션  -->
+<div id="wrap">
+    <div id = "header">
+        <div class="container">
+            <div class="header">
+                <div class="header-menu">
+                    <a href="http://wiss.tisory.com">Desinger</a>
+                    <a href="http://webstoryboy">Publisher</a>
+                    <a href="http://https://www.youtube.com/watch?v=m-2xF7YuUsM&list=PL4UVBBIc6giKixok-bC7XVEx0ZFsngr5Z&index=11">Youtube</a>
+                </div>
+                <!--//헤더 메뉴 -->
+                <div class="header-tit">
+                    <h1>Professional Publisher &amp; Designer</h1><br>
+                    <a href="#">webstoryboy.co.kr</a><!-- 자기 웹주소 -->
+                </div>
+                <!--//해더 타이틀-->
+                <!--  1. img 태그로 표현(의미가 있을 때) / alt 태그 - 대체 문자 표현
+                      2. background로 표현(의미가 없을 떼) / 대체문자 x
+                      3. 요즘에는 이미지를 background속성 / 웹표준을 지키려면->
+                        -가상으로 대체 문자를 만들어줌(ir효과)
+                        -이미지 스프라이트 기법(작업 편함, 용량 줌)
+                -->
+                <div class="header-icon">
+                    <a href="#" class="icon1"><span class="ir_pm">icon1</span></a>
+                    <a href="#" class="icon2"><span class="ir_pm">icon2</span></a>
+                    <a href="#" class="icon3"><span class="ir_pm">icon3</span></a>
+                    <a href="#" class="icon4"><span class="ir_pm">icon4</span></a>
+                </div>
+                <!--//해더 아이콘-->
+            </div>
         </div>
-        <!-- //header-->
-        <div id="contents">
-            <div id="cont_nav">
-                <div class="container">cont_nav</div>
-            </div>
-            <!-- //cont_nav-->
-            <div id="cont_tit">
-                <div class="container">cont_tit</div>
-            </div>
-            <!-- //cont_tit-->
-            <div id="cont_ban">
-                <div class="container">cont_ban</div>
-            </div>
-            <!-- //cont_ban-->
-            <div id="cont_cont">
-                <div class="container">cont_cont</div>
-            </div>
-            <!-- //cont_cont-->
-        </div>
-        <!-- //contests-->
-        <div id="footer"></div>
-        <!-- //footer-->
     </div>
-        <!-- //wrap -->
+    <!-- //header-->
+    <div id="contents">
+        <div id="cont_nav">
+            <div class="container">
+                <h2 class="ir_su">전체메뉴</h2>
+                <div class="nav">
+                    <div>
+                        <h3>HTML Reference</h3>
+                        <ol>
+                            <li><a href="#">HTML 태그(Tag)</a></li>
+                            <li><a href="#">블록 요소</a></li>
+                            <li><a href="#">DTD 선언</a></li>
+                            <li><a href="#">언어 속성 설정</a></li>
+                            <li><a href="#">HTML &lt;title&egs;</a></li>
+                            <li><a href="#">HTML &lt;meta&egs;</a></li>
+                            <li><a href="#">특수문자</a></li>
+                            <li><a href="#">하이퍼 링크</a></li>
+                            <li><a href="#">HTML &lt;style&egs;</a></li>
+                            <li><a href="#">HTML &lt;html&egs;</a></li>
+                            <li><a href="#">HTML &lt;head&egs;</a></li>
+                            <li><a href="#">HTML &lt;div&egs;</a></li>
+                            <li><a href="#">HTML &lt;colgroup&egs;</a></li>
+                            <li><a href="#">HTML &lt;caption&egs;</a></li>
+                        </ol>
+                    </div>
+                    <div>
+                        <h3>CSS Reference</h3>
+                        <ol>
+                            <li><a href="#">CSS 선택자</a></li>
+                            <li><a href="#">CSS 단위</a></li>
+                            <li><a href="#">CSS 색상</a></li>
+                            <li><a href="#">CSS 선언 방법</a></li>
+                            <li><a href="#">상대주소와 절대주소</a></li>
+                            <li><a href="#">CSS float</a></li>
+                            <li><a href="#">이미지 표현 방법</a></li>
+                            <li><a href="#">이미지 스프라이트</a></li>
+                            <li><a href="#">IR 효과</a></li>
+                            <li><a href="#">이미지 최적화</a></li>
+                            <li><a href="#">background-color</a></li>
+                            <li><a href="#">border-style</a></li>
+                            <li><a href="#">font-size</a></li>
+                            <li><a href="#">text-align</a></li>
+                        </ol>
+                    </div>
+                    <div class="last">
+                        <h3>Webstandard</h3>
+                        <ol>
+                            <li><a href="#">웹 표준</a></li>
+                            <li><a href="#">웹 접근성</a></li>
+                            <li><a href="#">W3C</a></li>
+                            <li><a href="#">웹 접근성 연구소</a></li>
+                            <li><a href="#">네이버 널리</a></li>
+                            <li><a href="#">다음 다룸</a></li>
+                            <li><a href="#">Webstandard</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //cont_nav-->
+        <div id="cont_tit">
+            <div class="container">
+                <div class="tit">
+                    <h2>"나는 퍼블리셔다"</h2>
+                    <a href="#" class="btn"><span class="ir_pm">전체메뉴</span></a>
+                </div>
+            </div>
+        </div>
+        <!-- //cont_tit-->
+        <div id="cont_ban">
+            <div class="container">
+                <div class="ban">
+                    <a href="#" class="prev"><span class="ir_pm">이전 이미지</span></a>
+                    <ul>
+                        <li class="ban_img1"><a href="#"><img src="img/banner_link1.jpg" alt="웹 표준 지침서 보기"></a></li>
+                        <li class="ban_img2"><a href="#"><img src="img/banner_link2.jpg" alt="CSS 버튼 지침서 보기"></a></li>
+                        <li class="ban_img3"><a href="#"><img src="img/banner_link3.jpg" alt="로그인 폼 지침서 보기"></a></li>
+                    </ul>
+                    <a href="#" class="next"><span class="ir_pm">다음 이미지</span></a>
+                </div>
+            </div>
+        </div>
+        <!-- //cont_ban-->
+        <div id="cont_cont">
+            <div class="container">
+                <div class="cont">
+                    <div class="column col1">col1</div><!-- //col1 -->
+                    <div class="column col2">col2</div><!-- //col2 -->
+                    <div class="column col3">col3</div><!-- //col3 -->
+                    <div class="column col4">col4</div><!-- //col4 -->
+                    <div class="column col5">col5</div><!-- //col5 -->
+                    <div class="column col6">col6</div><!-- //col6 -->
+                </div>
+            </div>
+        </div>
+        <!-- //cont_cont-->
+    </div>
+    <!-- //contests-->
+    <div id="footer"></div>
+    <!-- //footer-->
+</div>
+<!-- //wrap -->
 </body>
 </html>
