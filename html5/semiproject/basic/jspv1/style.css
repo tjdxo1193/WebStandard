@@ -1,0 +1,147 @@
+@charset "utf-8";
+/* 레이아웃 */
+body {}
+#wrap {}
+#header {}
+#contents {}
+#footer {}
+/* 컨텐츠 레이아웃 */
+#cont_nav {
+    }
+#cont_cont {
+ height: 600px
+}
+/* 헤더 */
+#header {text-align: left;}
+#header h1 {
+    width: 480px;
+    display: block;
+    text-align: center;
+    margin: 20px 0px 30px 20px  ;
+    font-weight: bold;
+    font-size: 40px;
+}
+/* float: left로 인한 영역깨짐(height:0) 방지법
+1. 깨지는 영역에 똑같이 float: left 사용한다.(비추! -> 모든 박스에 float: left 사용해야함)
+2. float에 성질을 차단하는 clear: both를 사용한다.(비추! -> 어떤 영역이 깨졌는지 잘 확인할 수 없음)
+3. float을 사용한 상위 박스한테 overflow: hidden을 사용한다.(현재는 제일 많이 사용! 2단 메뉴는 못함)
+4. clearfix를 사용합니다. (제일 좋은 방법 하지만 지금은 3번을 쓴다..)
+*/
+
+/* 전체메뉴 */
+#contents {}
+#contents > #cont_nav {}
+.nav_list ul {overflow: hidden;
+                    height: 20px;
+                    }
+.nav_list ul li {
+    width: 220px;
+    text-align: center;
+    float: left;
+    }
+.nav_list ul li:first-child {
+    margin: 0px 0px 0px 200px;
+}
+hr {
+    text-align: center;
+    width: 1280px;
+    height: 2px;
+    background: black;
+}
+/* 컨텐츠 */
+#cont_cont {
+    overflow: hidd  en;
+    text-align: center;
+    
+}
+#cont_cont h2 { text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 40px 0px 100px 125px;
+}
+.cont_table {
+    display: inline-block;
+    padding: 0 0 300px 0;
+}
+
+.cont_table tbody th{
+    padding: 0 20px 8px 0;
+    text-align: right;
+}
+
+.cont_table tbody td{
+    text-align: left;
+}
+/*로그인*/
+#cont_cont2 {
+    overflow: hidden;
+    text-align: center;
+}
+
+#cont_cont2 .cont_id {
+    text-align: right;
+    font-weight: bold;
+}
+#cont_cont2 #userid {
+    margin: 0 0 10px 14px;
+}
+#cont_cont2 .cont_pw{
+    text-align: right;
+    font-weight: bold;
+}
+#cont_cont2 #passwd {
+    margin: 0 0 10px 14px;
+}
+
+#cont_cont2 h2 { text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 40px 0px 100px 125px;
+}
+#cont_cont2 #button{
+    margin-right: 40px;
+}
+
+.cont_login {
+    display: inline-block;
+    padding: 0 0 300px 0;
+}
+
+/*회원가입(Join)*/
+
+#cont_cont2 .cont_repw{
+    text-align: right;
+    font-weight: bold;
+}
+#cont_cont2 #repasswd {
+    margin: 0 0 10px 14px;
+}
+
+#cont_cont2 .cont_name{
+    text-align: right;
+    font-weight: bold;
+}
+#cont_cont2 #name {
+    margin: 0 0 10px 14px;
+}
+
+#cont_cont2 #button1{
+    font-weight: bold;
+    position: static;
+}
+#cont_cont2 #button2{
+    position: relative;
+    left: 75px;
+    bottom: 27px;
+    font-weight: bold;
+}
+#cont_cont2 .button1 {display: block;}
+#cont_cont2 .button2 {display: block;}
+
+/* 푸터 */
+#footer {
+    text-align: center;
+}
+#footer h4 {
+    font-size: 14px;
+    margin: 10px;}

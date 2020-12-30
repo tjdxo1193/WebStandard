@@ -2,75 +2,95 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta content="webstoryboy" name="autor">
+    <meta content="웹 표준을 준수한 사이트 예제입니다" name="description">
+    <meta content="웹스토리보이, 웹표준, 웹접근성, 사이트 만들기" name="keywords">
+    <meta content="brakets" name="generator">
     <title>JSPv1</title>
+    <!-- CSS STYLE -->
+    <link href="../style.css" rel="stylesheet">
+    <link href="../reset.css" rel="stylesheet">
+    <!-- 웹폰트 -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
 </head>
+
 <body>
-<header>
-    <h1>JSP프로젝트 v1</h1>
-</header>
-<nav>
-    <ul>
-        <li>Home</li>
-        <li>회원가입</li>
-        <li>로그인</li>
-        <li>게시판</li>
-        <li>회원정보</li>
-    </ul>
-    <hr>
-</nav>
-<div id = "container">
-    <section>
-        <h3>게시판</h3>
-        <table>
-            <thead>
-            <tr><th>번호</th><th>제목</th><th>작성자</th>
-                <th>작성일</th><th>조회수</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>1</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 사실이라구, 친구!</td>
-                    <td>황성태</td><td>2021-12-25</td>
-                    <td>777</td></tr>
-                <tr><td>1</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 사실이라구, 친구!</td>
-                    <td>황성태</td><td>2021-12-25</td>
-                    <td>777</td></tr>
-                <tr><td>1</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 사실이라구, 친구!</td>
-                    <td>황성태</td><td>2021-12-25</td>
-                    <td>777</td></tr>
-                <tr><td>1</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 사실이라구, 친구!</td>
-                    <td>황성태</td><td>2021-12-25</td>
-                    <td>777</td></tr>
-                <tr><td>1</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 사실이라구, 친구!</td>
-                    <td>황성태</td><td>2021-12-25</td>
-                    <td>777</td></tr>
-                <tr><td>1</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 사실이라구, 친구!</td>
-                    <td>황성태</td><td>2021-12-25</td>
-                    <td>777</td></tr>
-                <tr><td>1</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 사실이라구, 친구!</td>
-                    <td>황성태</td><td>2021-12-25</td>
-                    <td>777</td></tr>
-                <tr><td>1</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 사실이라구, 친구!</td>
-                    <td>황성태</td><td>2021-12-25</td>
-                    <td>777</td></tr>
-                <tr><td>1</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 사실이라구, 친구!</td>
-                    <td>황성태</td><td>2021-12-25</td>
-                    <td>777</td></tr>
-                <tr><td>1</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 사실이라구, 친구!</td>
-                    <td>황성태</td><td>2021-12-25</td>
-                    <td>777</td></tr>
-                <tr><td>1</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 사실이라구, 친구!</td>
-                    <td>황성태</td><td>2021-12-25</td>
-                    <td>777</td></tr>
-                <tr><td>1</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 사실이라구, 친구!</td>
-                    <td>황성태</td><td>2021-12-25</td>
-                    <td>777</td></tr>
-            </tbody>
-            <tfoot></tfoot>
-        </table>
-    </section>
+<div id="wrap">
+    <header id="header">
+        <h1>JSP프로젝트 v1</h1>
+    </header>
+    <!--    //헤더영역    -->
+    <div id="contents">
+        <nav id="cont_nav">
+            <div class = "nav_list">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../join.html">회원가입</a></li>
+                    <li><a href="../login.html">로그인</a></li>
+                    <li><a href="../board/list.html">게시판</a></li>
+                    <li><a href="../myinfo.html">회원정보</a></li>
+                </ul>
+            </div>
+            <hr>
+        </nav>
+        <!--    //cont_nav    -->
+        <div id = "container">
+            <section>
+                <h3>게시판</h3>
+                <table>
+                    <thead>
+                    <tr><th>번호</th><th>제목</th><th>작성자</th>
+                        <th>작성일</th><th>조회수</th></tr>
+                    </thead>
+                    <tbody>
+                    <tr><td>1</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 사실이라구, 친구!</td>
+                        <td>황성태</td><td>2021-12-25</td>
+                        <td>777</td></tr>
+                    <tr><td>1</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 사실이라구, 친구!</td>
+                        <td>황성태</td><td>2021-12-25</td>
+                        <td>777</td></tr>
+                    <tr><td>1</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 사실이라구, 친구!</td>
+                        <td>황성태</td><td>2021-12-25</td>
+                        <td>777</td></tr>
+                    <tr><td>1</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 사실이라구, 친구!</td>
+                        <td>황성태</td><td>2021-12-25</td>
+                        <td>777</td></tr>
+                    <tr><td>1</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 사실이라구, 친구!</td>
+                        <td>황성태</td><td>2021-12-25</td>
+                        <td>777</td></tr>
+                    <tr><td>1</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 사실이라구, 친구!</td>
+                        <td>황성태</td><td>2021-12-25</td>
+                        <td>777</td></tr>
+                    <tr><td>1</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 사실이라구, 친구!</td>
+                        <td>황성태</td><td>2021-12-25</td>
+                        <td>777</td></tr>
+                    <tr><td>1</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 사실이라구, 친구!</td>
+                        <td>황성태</td><td>2021-12-25</td>
+                        <td>777</td></tr>
+                    <tr><td>1</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 사실이라구, 친구!</td>
+                        <td>황성태</td><td>2021-12-25</td>
+                        <td>777</td></tr>
+                    <tr><td>1</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 사실이라구, 친구!</td>
+                        <td>황성태</td><td>2021-12-25</td>
+                        <td>777</td></tr>
+                    <tr><td>1</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 사실이라구, 친구!</td>
+                        <td>황성태</td><td>2021-12-25</td>
+                        <td>777</td></tr>
+                    <tr><td>1</td><td>시간은 금이라구, 친구! 진짜라구, 친구! 정말이라구, 친구! 사실이라구, 친구!</td>
+                        <td>황성태</td><td>2021-12-25</td>
+                        <td>777</td></tr>
+                    </tbody>
+                    <tfoot></tfoot>
+                </table>
+            </section>
+        </div>
+    </div>
+    <footer id="footer">
+        <hr>
+        <h4>copyright &copy; 2021. sungcoding. All rights reserved.</h4>
+    </footer>
 </div>
-<footer>
-    <hr>
-    <p>copyright &copy; 2021. sungcoding. All rights reserved.</p>
-</footer>
 </body>
 </html>
