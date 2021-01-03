@@ -21,39 +21,209 @@
 /*레이아웃*/
 #wrap {
     width: 1150px;
+    border: 3px solid black;
 }
 #header {
     height: 100px;
-    background: #222111;
+    overflow: hidden;
 }
 #nav {
-    height: auto;
-    background: #222222;
+    height: 32px;
+    padding-left: 20px;
+    padding-top: 5px;
+    background: #dcdcdc;
 }
 #main {
     height: 500px;
-    background: #222333;
 }
 #footer {
     height: 200px;
-    background: #333333;
 }
 /*헤더영역*/
+#header .cont_header {}
+#header .cont_header .header-menu{
+    }
+.header-menu .header_log {
+    float: left;
+    margin: 15px 10px 10px 25px;
+    display: table;
+    text-align: center;
+    width: 170px;
+    height: 70px;
+    background: #dcdcdc;
+}
+.header-menu .header_log h1 {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 20px;
+    font-weight: 700;
+    }
+.header-menu .header_mem {
+    float: left;
+    margin: 0 0 0 0;
+    width: 200px;
+    height: 100px;
 
+}
+.header-menu .header_mem h6{
+    font-weight: 600;
+    padding-top: 65px;
+    display: block;
+}
 
+.header-menu .header_list {
+    margin-top: 10px;
+    margin-right: 20px;
+    float: right;
+}
+.header-menu .header_list a{
+    font-size: 10px;
+    padding-right: 6px;
+    padding-left: 3px;
+    border-right: 1px solid black;
+}
+.header-menu .header_list a:last-child {
+    border-right: none;
+}
 
 /*네비영역*/
-
-
+#nav .cont_nav {
+    overflow: hidden;
+}
+#nav .cont_nav .nav_in {
+    float: left;
+}
+#nav .cont_nav .nav_in input {
+    border: 2px solid #888888;
+    width: 300px;
+}
+#nav .cont_nav .nav_Cat {
+}
+#nav .cont_nav .nav_Cat select {
+    margin-left: 8px;
+    padding: 2px;
+    border: 2px solid #888888;
+    width: 150px;
+    float: left;
+}
+#nav .cont_nav .nav_Cat button {
+    margin-left: 10px;
+    width: 150px;
+    float: left;
+    color: white;
+    font-weight: 500;
+    background: #888888;
+}
 
 /*메인 영역*/
+#main {
+    overflow: hidden;}
 
 /*_카테고리영역*/
+#main .cont_cat {}
+#main .cont_cat section {}
+#main .cont_cat section aside {
+    float: left;
+}
+#main .cont_cat ul {
+    border: 3px solid black;
+    width: 225px;
+    margin: 10px 10px 20px 20px;}
+#main .cont_cat ul li {
+    padding: 7px 14px;
+    font-weight: bold;
+    font-size: 18px;
+    border-top: 2px solid silver}
 
 /*_배너영역*/
+.cont_ban {float: right;
+    width: 850px;
+    margin: 10px 25px 20px 0;
+    border: 3px solid black;
+    height: 300px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;}
+.cont_ban section {
+}
+.cont_ban section h3 {
+    margin-top: 125px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.cont_ban section ul {
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    text-align: center;
+    line-height: 30px;
+    margin-right: 20px;}
+.cont_ban section ul li {
+    float: left;
+    margin: 5px 5px 10px 5px;
+    width: 30px;
+    height: 30px;
+    display: block;
+    background: #dcdcdc;
+    font-weight: bold;}
 
 /*_제품영역*/
-
-
+.cont_pro section { clear: both;}
+.cont_pro section .prodlist {}
+.cont_pro section .prodlist h3 {
+    font-weight: 700;
+    margin-left: 25px;
+    margin-bottom: 10px;}
+.cont_pro section .prodlist ul {
+    overflow: hidden;
+    margin-left: 60px;}
+.cont_pro section .prodlist ul li {
+    float: left;
+    margin-right: 55px;
+}
+.cont_pro section .prodlist ul li .box_img {
+    width: 100px;
+    height: 100px;
+    background: #dcdcdc;
+    border-radius: 10px;}
+.cont_pro section .prodlist ul li p {
+    margin-top: 5px;
+    text-align: center;}
 
 /*푸터영역*/
+#footer {
+    border-top: 1px solid black;
+}
+.cont_footer {}
+.cont_footer .f_list1 {
+    float: left;}
+.f_list1 ul {
+    margin: 35px 30px 0px 60px;
+}
+.f_list1 ul li {}
+.f_list1 ul h3 {
+    font-weight: 700;
+}
+
+.cont_footer .f_list2 {
+    float: left;
+}
+.f_list2 ul {
+    margin: 35px 30px 0px 60px;
+}
+.f_list2 ul li {}
+.f_list2 ul h3 {
+    font-weight: 700;
+}
+
+
+.cont_footer .f_list3 {
+    float: left;
+}
+.f_list3 ul {
+    margin: 35px 30px 0px 60px;
+}
+.f_list3 ul li {}
+.f_list3 ul h3 {
+    font-weight: 700;
+}
