@@ -50,7 +50,7 @@ hr {
 }
 /* 컨텐츠 */
 #cont_cont {
-    overflow: hidd  en;
+    overflow: hidden;
     text-align: center;
     
 }
@@ -137,6 +137,36 @@ hr {
 }
 #cont_cont2 .button1 {display: block;}
 #cont_cont2 .button2 {display: block;}
+
+/* 게시판1(notice) */
+#container {display: inline-block;}
+#container .notice {
+}
+#container section h3 {
+    font-size: 28px;
+    font-weight: bold;
+    padding: 25px 0 8px 125px;
+}
+#container .notice .t_notice {
+    display: inline;
+    text-align: center;
+    margin: 0 0 0 400px;
+    border-collapse: collapse;
+}
+.t_notice thead{
+}
+.t_notice thead th,td {
+    border: 1px solid black;
+    padding: 5px;
+}
+.t_notice thead:nth-child(2){
+    width: 200px;}
+.t_notice tbody {
+
+}
+
+/*뷰 리스트*/
+
 
 /* 푸터 */
 #footer {

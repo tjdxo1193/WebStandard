@@ -2,124 +2,167 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="autor" content="webstoryboy">
+    <meta name="description" content="웹 표준을 준수한 사이트 예제입니다">
+    <meta name="keywords" content="웹스토리보이, 웹표준, 웹접근성, 사이트 만들기">
+    <meta name="generator" content="brakets">
     <title>레이아웃1</title>
-</head>
+    <!-- CSS STYLE -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- 웹폰트 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+    </head>
+    
+    
 <body>
-<header>
-    <div>
-        <h1>logo</h1>
-        <p></p>
-    </div>
-    <div>
-        <h6><u>Login</u> or <u>Create Account</u></h6>
-    </div>
-    <div>
-        <ul>
-          <h6>
-              <li>contact</li>
-              <li>store locator</li>
-              <li>support</li>
-              <li>CART</li>
-          </h6>
-        </ul>
-    </div>
-</header>
-<nav>
-    <input type="text" name="text">
-    <select>
-        <option>Category</option>
-        <option>aaa</option>
-        <option>bbb</option>
-        <option>ccc</option>
-    </select>
-    <button type = "submit"></button>
-</nav>
-<div id = "main">
-    <section>
-        <aside>
-            <ul>
-                <h3>
-                    <li>Allcategories</li>
-                    <li>Category1</li>
-                    <li>Category2</li>
-                    <li>Category3</li>
-                    <li>Category4</li>
-                    <li>Category5</li>
-                    <li>Category6</li>
-                </h3>
-            </ul></aside>
-        <div id = "banner">
-            <ul><h3>[PROMOTIONAL IMAGES ROTATE HERE]</h3>
-                <h5>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                </h5>
-            </ul>
-        </div>
-    </section>
-    <section>
-        <div id = "prodlist">
-            <h3>Today's Specials</h3>
-            <ul>
-                <h3>
-                    <li>
-                        <div></div>
-                        <p><a href="#">Product 1</a></p>
-                    </li>
-                    <li>
-                        <div></div>
-                        <p><a href="#">Product 2</a></p>
-                    </li>
-                    <li>
-                        <div></div>
-                        <p><a href="#">Product 3</a></p>
-                    </li>
-                    <li>
-                    <div></div>
-                    <p><a href="#">Product4</a></p>
-                    </li>
-                    <li>
-                        <div></div>
-                        <p><a href="#">Product5</a></p>
-                    </li>
-                    <li>
-                        <div></div>
-                        <p><a href="#">Product6</a></p>
-                    </li>
-                </h3>
-            </ul>
-        </div>
-    </section>
+    <!-- 스킵 네비게이션 -->
+<div id="skip">
+    <a href="#cont_nav">전체 메뉴 바로가기</a>
+    <a href="#cont_ban">배너 영역 바로가기</a>
+    <a href="#cont_cont">컨텐츠 영역 바로가기</a>
 </div>
-<footer>
-    <div>
-        <ul>
-            <li><h3>ABOUT US</h3></li>
-            <li>Company</li>
-            <li>News</li>
-            <li>Jobs</li>
-            <li>Policies</li>
-            <li>Contact</li>
-        </ul>
+<!--  //스킵 네비게이션  -->
+    <div id="wrap">
+        <div id = "header">
+            <div class="cont_header">
+                <div class="header-menu">
+                    <div class="header-log">
+                        <h1>LOGO</h1>
+                        <h6><u>Login</u> or <u>Create Account</u></h6><!-- 자기 웹주소 -->
+                    </div>
+                    <!--//해더 로고-->
+                    <a href="#">contact</a>
+                    <a href="#">store locator</a>
+                    <a href="#">support</a>
+                    <a href="#">CART</a>
+                </div>
+            <!--//헤더 메뉴 -->
+            </div>
+        </div>
+        <!-- //header-->
+
+        <div id="nav">
+           <div class="cont_nav">
+               <div>
+                     <input type="text" name="text">
+               </div>
+               <div>
+                   <select>
+                       <option>Category</option>
+                        <option>aaa</option>
+                       <option>bbb</option>
+                       <option>ccc</option>
+                   </select>
+                   <button type = "submit">Search</button>             
+               </div>
+            </div>
+        </div>
+        <!-- //cont_nav-->
+        
+        <div id = "main">
+            <div class = "cont_cat">
+                <section>
+                    <aside>
+                        <ul>
+                            <h3>
+                                <li>Allcategories</li>
+                                <li>Category1</li>
+                                <li>Category2</li>
+                                <li>Category3</li>
+                                <li>Category4</li>
+                                <li>Category5</li>
+                                <li>Category6</li>
+                            </h3>
+                        </ul>
+                    </aside>
+                </section>
+            </div>
+            <!--//cont_cat-->
+            <div class = "cont_ban">
+                <section>
+                    <ul>
+                        <h3>[PROMOTIONAL IMAGES ROTATE HERE]</h3>
+                        <h5>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                        </h5>
+                    </ul>
+                </section>
+            </div>
+            <!--//cont_ban-->
+            <div class="cont_pro">
+                <section>
+                    <div class = "prodlist">
+                        <h3>Today's Specials</h3>
+                        <ul>
+                            <li>
+                                    <div class="box_img"><h3>박스이미지</h3></div>
+                                    <p><a href="#">Product 1</a></p>
+                            </li>
+                            <li>
+                                    <div class="box_img"><h3>박스이미지</h3></div>
+                                    <p><a href="#">Product 2</a></p>
+                            </li>
+                            <li>
+                                    <div class="box_img"><h3>박스이미지</h3></div>
+                                    <p><a href="#">Product 3</a></p>
+                            </li>
+                            <li>
+                                    <div class="box_img"><h3>박스이미지</h3></div>
+                                    <p><a href="#">Product4</a></p>
+                            </li>
+                            <li>
+                                    <div class="box_img"><h3>박스이미지</h3></div>
+                                    <p><a href="#">Product5</a></p>
+                            </li>
+                            <li>
+                                    <div class="box_img"><h3>박스이미지</h3></div>
+                                    <p><a href="#">Product6</a></p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+            <!--//cont_pro-->
+        </div>
+        <!--//main-->
+        <div id="footer">
+            <div class="cont_footer">
+            <div class="f_list3">
+                <ul>
+                    <li><h3>ABOUT US</h3></li>
+                    <li>Company</li>
+                    <li>News</li>
+                    <li>Jobs</li>
+                    <li>Policies</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div class="f_list2">
+                <ul>
+                    <li><h3>SOCIAL</h3></li>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Try our app</li>
+                </ul>
+            </div>
+            <div class="f_list3">
+                <ul>
+                    <li><h3>Allcategories</h3></li>
+                    <li>FAQ</li>
+                    <li>Live support</li>
+                    <li>Site map</li>
+                </ul>
+            </div>
+        </div>
+    <!-- //footer-->
     </div>
-    <div>
-        <ul>
-            <li><h3>SOCIAL</h3></li>
-            <li>Facebook</li>
-            <li>Twitter</li>
-            <li>Try our app</li>
-        </ul>
-    </div>
-    <div>
-        <ul>
-            <li><h3>Allcategories</h3></li>
-            <li>FAQ</li>
-            <li>Live support</li>
-            <li>Site map</li>
-        </ul>
-    </div>
-</footer>
+</div>        
 </body>
 </html>
