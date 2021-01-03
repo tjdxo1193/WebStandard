@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+/*스킵 내비게이션*/
+#skip {
+    position: relative; }
+
+#skip a {
+    position: absolute;
+    left: 0px;
+    top: -70px;
+    border: 1px solid #fff;
+    color: #fff;
+    background: #333;
+    line-height: 30px;
+    width: 140px;
+    text-align: center;
+}
+#skip a:active,
+#skip a:focus {top:0}
+
+/*레이아웃*/
+#wrap {
+    width: 1150px;
+}
+#header {
+    height: 100px;
+    background: #222111;
+}
+#nav {
+    height: auto;
+    background: #222222;
+}
+#main {
+    height: 500px;
+    background: #222333;
+}
+#footer {
+    height: 200px;
+    background: #333333;
+}
+/*헤더영역*/
+
+
+
+/*네비영역*/
+
+
+
+/*메인 영역*/
+
+/*_카테고리영역*/
+
+/*_배너영역*/
+
+/*_제품영역*/
+
+
+
+/*푸터영역*/
