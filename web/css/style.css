@@ -39,8 +39,7 @@
 .header .header-icon a.icon3:hover {background-position: -60px -120px;}
 .header .header-icon a.icon4:hover {background-position: -60px -180px;}
 
-/*
-float: left로 인한 영역깨짐(height:0) 방지법
+/* float: left로 인한 영역깨짐(height:0) 방지법
 1. 깨지는 영역에 똑같이 float:left를 사용한다.(X) --> 모든 박스에 float:left를 사용하게 됩니다.
 2. float의 성질을 차단하는 clear: both;를 사용한다.(X) --> 어떤 영역이 깨졌는지 찾기 어려움.
 3. float을 사용한 상위 박스한테 overflow: hidden을 사용합니다. (O) --> 현재는 제일 많이 사용.
@@ -62,9 +61,9 @@ float: left로 인한 영역깨짐(height:0) 방지법
 .tit {position: relative;}
 .tit h2 {font-size: 40px; text-align: center; padding: 5px 0; letter-spacing: 2px; color: #2c94c4; font-family: 'Nanum Brush Script', cursive;}
 .tit .btn {position: absolute; top: 5px; right: 0; width: 60px; height: 60px; background: url(../img/icon.png) no-repeat 0 -600px;}
-.tit .btn.on {
-    background-position: 0 -660px;}
-/* 배너 */
+.tit .btn.on {background-position: 0 -660px;}
+
+/* 배너
 .ban {position: relative; padding: 24px 0 20px;}
 .ban a.prev {position: absolute; left: -80px; top: 60px; width: 43px; height: 43px; background: #ccc; background: url(../img/icon.png) no-repeat -150px 0;}
 .ban a.next {position: absolute; right: -80px; top: 60px; width: 43px; height: 43px; background: #ccc; background: url(../img/icon.png) no-repeat -150px -43px;}
@@ -72,13 +71,28 @@ float: left로 인한 영역깨짐(height:0) 방지법
 .ban a.next:hover {background-position: -193px -43px;}
 .ban ul {overflow: hidden;}
 .ban ul li {float: left; width: 330px;}
-.ban ul li:last-child {text-align: right;} /* ie9부터 적용 */
-.ban ul li:nth-child(2) {text-align: center;} /* ie9부터 적용 */
+.ban ul li:last-child {text-align: right;}  ie9부터 적용
+.ban ul li:nth-child(2) {text-align: center;}   ie9부터 적용
 .ban ul li.ban_img1 {text-align: left;}
 .ban ul li.ban_img2 {text-align: center;}
 .ban ul li.ban_img3 {text-align: right;}
 .ban ul li img {border: 4px solid #dcdcdc;}
-.ban ul li img:hover {border-color: #98bcdc;}
+.ban ul li img:hover {border-color: #98bcdc;} */
+
+
+/* 슬릭 배너 */
+.ban {position: relative; padding: 24px 0 20px;}
+.ban .slick-prev {position: absolute; left: -80px; top: 80px; width: 43px; height: 43px; background: #ccc; background: url(../img/icon.png) no-repeat -150px 0; text-indent: -9999px;}
+.ban .slick-next {position: absolute; right: -80px; top: 80px; width: 43px; height: 43px; background: #ccc; background: url(../img/icon.png) no-repeat -150px -43px; text-indent: -9999px;}
+.ban .slick-prev:hover {background-position: -193px 0;}
+.ban .slick-next:hover{background-position: -193px -43px;}
+.ban img {border: 4px solid #dcdcdc;}
+.ban img:hover {border-color: #98bcdc;}
+.ban .slick-slide {margin: 10px;}
+.ban .slick-dots {position: absolute; bottom: 15px; display: block; width: 100%; text-align: center;}
+.ban .slick-dots li {display: inline-block; width: 15px; height: 15px; margin: 5px;}
+.ban .slick-dots li button {font-size: 0; line-height: 0; display: block; width: 15px; height: 15px; cursor: pointer; background: #5dbfeb; border-radius: 50%;}
+.ban .slick-dots li.slick-active button {background: #2b91c8;}
 
 /* 컨텐츠 */
 .cont {overflow: hidden; padding-top: 30px;}
@@ -185,7 +199,7 @@ float: left로 인한 영역깨짐(height:0) 방지법
 .notice4 a.more {position: absolute; right: 9px; top: 9px;}
 
 /* 갤러리 */
-.gallery {position: relative; border: 1px solid #ccc; height: 254px; overflow: hidden;}
+.gallery {position: relative; border: 1px solid #ccc; height: 255px; overflow: hidden;}
 .gallery h4 {font-size: 14px; color: #0093bd; border-bottom: 1px solid #ccc; padding: 10px 0 8px 11px; font-weight: bold;}
 .gallery .gallery_btn {position: absolute; right: 5px; top: 7px;}
 .gallery .gallery_btn ul {overflow: hidden;}
@@ -200,6 +214,17 @@ float: left로 인한 영역깨짐(height:0) 방지법
 .gallery .gallery_btn li.gb_icon3 a:hover {background-position: -173px -166px;}
 .gallery .gallery_btn li.gb_icon4 a:hover {background-position: -173px -189px;}
 .gallery .gallery_img img {width: 100%;}
+
+/* 슬릭 갤러리 */
+.gallery .gallery_btn button {float: left; margin: 1px 2px; display: block; width: 23px; height: 23px; background: url(../img/icon.png) no-repeat;}
+.gallery .gallery_btn .gb_icon1 {background-position: -150px -120px;}
+.gallery .gallery_btn .gb_icon2 {background-position: -150px -143px;}
+.gallery .gallery_btn .gb_icon3 {background-position: -150px -166px;}
+.gallery .gallery_btn .gb_icon4 {background-position: -150px -189px;}
+.gallery .gallery_btn .gb_icon1:hover {background-position: -173px -120px;}
+.gallery .gallery_btn .gb_icon2:hover {background-position: -173px -143px;}
+.gallery .gallery_btn .gb_icon3:hover {background-position: -173px -166px;}
+.gallery .gallery_btn .gb_icon4:hover {background-position: -173px -189px;}
 
 /* 로그인 */
 #login-wrap {margin-bottom: 15px; background: #f2f4f5; padding: 15px;}
@@ -229,3 +254,9 @@ float: left로 인한 영역깨짐(height:0) 방지법
 .footer li:before {content: ''; width: 1px; height: 12px; background: #ccc; position: absolute; left: 0; top: 2px;}
 .footer li:first-child:before {width: 0; height: 0;}
 .footer .w3c {margin-top: 15px;}
+
+/* 레이어 팝업 */
+#layer {display: none; position: fixed; left: 50px; top: 50px; width: 700px; border: 10px solid #dceff7; box-shadow: 3px 3px 10px rgba(0,0,0,0.4);}
+#layer img {width: 100%; display: block;}
+#layer .close {position: absolute; right: 20px; top: 20px; background: #0093bd; padding: 1px 2px; color: #fff;}
+#layer .close:hover {text-decoration: underline;}
