@@ -84,6 +84,26 @@
     document.write('<p>' + Number('총35000원') + '</p>');
     document.write('<p>' + parseInt('총35000원') + '</p>');
 </script>
+<h1>연산자</h1>
+<script>
+
+    //증감 연산자
+    let x = 10, y=10;
+
+    document.write('<p>' + (++x + 3) + '</p>');
+    document.write('<p>' + (y++ + 3) + '</p>');
+
+    y = x-- +5 + xx;
+    document.write('<p>' + y + '</p>');
+
+    //동등, 동일 비교 연산자
+
+    let a = 3, b = 3, c = '3';
+    document.write('<p>' + a == b + '</p>');
+    document.write('<p>' + a === b + '</p>');
+    document.write('<p>' + a === c + '</p>');
+
+</script>
 </body>
 </html>
 
@@ -100,7 +120,9 @@
 증감연산자 : ++x x++ --x x--
 비교연산자 : == !=(값의 동일성 체크:equal) > >= < <=
            (=== !== 값,타입의 동일성체크 : strict equal)
-논리연산자 :
-기타연산자 :
+논리연산자 : && || ! (short-circuit 연산 지원)
+기타연산자 : +(문자열결합) ? : (삼항) typeof (변수의 타입출력)
 
+
+insights.stackoverflow.com
 -->
