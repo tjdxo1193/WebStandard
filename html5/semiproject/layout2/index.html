@@ -2,17 +2,32 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="autor" content="webstoryboy">
+    <meta name="description" content="웹 표준을 준수한 사이트 예제입니다">
+    <meta name="keywords" content="웹스토리보이, 웹표준, 웹접근성, 사이트 만들기">
+    <meta name="generator" content="brakets">
     <title>레이아웃2</title>
+    <!-- CSS STYLE -->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- 웹폰트 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
 </head>
 <body>
 <header>
-    <h1>logo</h1>
+    <h1>로고</h1>
+    <div>
+        <input type="text" name ="search">
+        <button>검색</button>
+    </div>
     <ul>
         <li>회원가입</li>
         <li>로그인</li>
         <li>회원가입</li>
     </ul>
-    <div></div>
 </header><!--헤더 영역-->
 <nav>
     <ul>
@@ -27,7 +42,24 @@
 </nav><!--내비 영역-->
 <div id="main">
     <aside>
-        <div id="login"></div>
+        <div id="login">
+            <ul>
+                <li>회원가입</li>
+                <li>아이디찾기</li>
+                <li>비밀번호찾기</li>
+            </ul>
+        </div>
+        <hr>
+        <ul id="atlonin">
+            <li>보안접속 ON | </li>
+            <li><input type="checkbox"> 자동로그인</li>
+        </ul>
+        <ul class="longinfrm">
+            <li><input type="text" placeholder="아이디"></li>
+            <li><input type="ps"></li>
+            <li></li>
+            <li></li>
+        </ul>
         <div id="notice">
             <ul>
                 <li><h3>공지사항</h3></li>

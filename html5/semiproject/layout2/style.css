@@ -1,0 +1,10 @@
+@charset "utf-8";
+/*
+float: left로 인한 영역깨짐(height:0) 방지법
+1. 깨지는 영역에 똑같이 float:left를 사용한다.(X) --> 모든 박스에 float:left를 사용하게 됩니다.
+2. float의 성질을 차단하는 clear: both;를 사용한다.(X) --> 어떤 영역이 깨졌는지 찾기 어려움.
+3. float을 사용한 상위 박스한테 overflow: hidden을 사용합니다. (O) --> 현재는 제일 많이 사용.
+4. clearfix를 사용합니다. (O)
+*/
+header {}
+header h1 {}
