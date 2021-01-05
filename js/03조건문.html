@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>03조건문</title>
+</head>
+<body style="background: #444444;">
+
+<h1>조건문</h1>
+<script>
+    //조건문 : 주어진 식의 결과에 따라 별도의 명령을 수행
+    // if () {}
+    // else if () {}
+    // else () {}
+
+    //성적 처리 프로그램
+    // 1. 변수선언
+    let name = '혜교'
+    let kor = 99;
+    let eng = 100;
+    let mat = 55;
+    let grd = '가';
+
+    // 2. 성적처리
+    tot = kor + eng + mat;
+    avg = tot / 3;
+    if (avg >= 90) grd = '수';
+    else if (avg >= 80) grd = '우';
+    else if (avg >= 70) grd = '미';
+    else if (avg >= 60) grd = '양';
+
+
+
+    // 3. 결과 출력
+    document.write('<p>이름 :' + name + '</p>');
+    document.write('<p>국어 :' + kor + '</p>');
+    document.write('<p>영어 :' + eng + '</p>');
+    document.write('<p>수학 :' + mat + '</p>');
+    document.write('<p>총점 :' + tot + '</p>')
+    // document.write('<p>평균 :' + Math.round(avg,1) + '</p>')
+    document.write('<p>평균 :' + avg.toFixed(1) + '</p>')
+    document.write('<p>학점 :' + grd + '</p>')
+
+
+
+</script>
+<script>
+    // 다중 조건문 - switch
+    // 조건이 많은 경우 if 문보다는 switch 문을 추천
+    // switch (조건식) {
+    //  case: 값1: 문장1; break;
+    //  case: 값2: 문장2; break;
+    //  case: 값3: 문장3; break;
+    //  default: break;
+    // }
+    // let x = Math.round(avg/10);
+    let x = (avg/10).toFixed(0);
+    switch (x) {
+        case 10:
+            case 9: grd = '수'; break;
+        case 8: grd = '우'; break;
+        case 7: grd = '미'; break;
+        case 6: grd = '양'; break;
+        default: grd = '가'; break;
+    }
+
+</script>
+<script>
+    //오늘 날짜의 요일을 한글로 출력하는 프로그램 작성
+    //오늘의 요일 : new Date().getDay() 이용
+    // 0:일요일, 1:월요일, ...... 6: 토요일
+    let td = '일'
+    let x = new Date().getDay()
+    document.write('<p>' + new Date().getDay() + '</p>');
+    switch (x) {
+        case 1:
+            td = '월';
+            break;
+        case 2:
+            td = '화';
+            break;
+        case 3:
+            td = '수';
+            break;
+        case 4:
+            td = '목';
+            break;
+        case 5:
+            td = '금';
+            break;
+        case 6:
+            td = '토';
+            break;
+        default:
+            td = '일'
+            break;
+    }
+    let today = new Date();
+    document.write('<p>' + today.getFullYear() + '년 ');
+    document.write('' + (today.getMonth()+1) + '월 ');
+    document.write('' + today.getDate() + '일 ');
+    document.write('' + td + '</p>');
+
+    document.write('<p>' + today.getHours() + '시 ');
+    document.write('' + today.getMinutes() + '분 ');
+    document.write('' + today.getSeconds() + '초</p>');
+
+
+    //d2.naver.com
+//  dive into deep
+</script>
+</body>
+</html>
