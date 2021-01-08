@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="AWS Mariadb" uuid="54de6c52-b44c-4da9-bc7b-b85597f1175e">
+    <data-source source="LOCAL" name="AWS Playground" uuid="22171330-4068-4f7a-b389-97871b209bf6">
       <driver-ref>mariadb</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
