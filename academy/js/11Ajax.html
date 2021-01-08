@@ -54,53 +54,117 @@
 
 <h2>주소검색</h2>
 <div>
-    <select id="sido">
-        <option>--시도--</option>
-        <option>서울특별시</option>
-        <option>경기도</option>
-        <option>인천광역시</option>
-        <option>부산광역시</option>
-    </select>
-    <select id="gugun">
-        <option>--시/군/구--</option>
-    </select>
-    <select id="dong">
-        <option>--읍/면/동--</option>
-    </select>
+    <select id="sido"></select>
+    <select id="gugun"></select>
+    <select id="dong"></select>
 </div>
 <p id="addr"></p>
-
 <script>
-   // 비동기방식으로 가져올 데이터의 url 정의
-    let url1 = 'http://localhost:8080/zipcode/sido.jsp'
-    let url2 = 'http://localhost:8080/zipcode/gugun.jsp'
-    let url3 = 'http://localhost:8080/zipcode/dong.jsp'
+    let url1 = 'http://localhost:8080/zipcode/sido.jsp';
+    let url2 = 'http://localhost:8080/zipcode/gugun.jsp';
+    let url3 = 'http://localhost:8080/zipcode/dong.jsp';
 
-
-   //변수선언
-    let sido = document.getElementById('sido');
+    // 변수선언
+    let sido = document.getElementById('sido')
     let gugun = document.getElementById('gugun');
-    let dong = document.getElementById('dong');
+    let dong = document.getElementById('dong')
 
-    sido.addEventListener('change', makegu);
+    // 시도에 목록 출력
+    // zipcode_2013테이블에서 시도만 추출해서
+    // sido라는 select요소에 option 요소 추가
+    function getsido() {
+        req = new XMLHttpRequest();
+        req.onreadystatechange = function(){
+            if (req.readyState == 4 && req.status == 200) {
+                makesido(req.responseText);
+            }
+        };
+        req.open('get', url1, true);
+        req.send();
+    }
+    getsido();
+    function makesido(sd){
+        let cols = sd.split(',');
 
-    function makegu(){
-        //현재 선택한 시도의 index값을 알아냄
-        let sidx = sido.selectedIndex;
+        opt = document.createElement('option');
+        txt = document.createTextNode('--시/도--');
 
-        //이미 등록된 목록은 제거
-        while(gugun.lastChild){//구군목록에 option 태그가 있는가?
-            gugun.removeChild(gugun.lastChild);
+        opt.appendChild(txt);
+
+        sido.appendChild(opt);
+
+        for(let col of cols) {
+            if (col == '') continue;
+            opt = document.createElement('option');
+            opt.value = col.trim(); // option태그에 value 속성에 col값 추가
+            txt = document.createTextNode(col.trim());
+            opt.appendChild(txt);
+            sido.appendChild(opt);
         }
+    }
 
-        //선택한 시도에 대한 구군목록을 배열에서 가져와서
-        //구군 select 에 목록으로 추가함
-        //<select><option>강남구</option></select>
-        for(let gg of sgg[sidx]){
-            let opt = document.createElement('option');
-            let txt = document.createTextNode(gg);
+    // 첫번째 select 요소에 이벤트핸들러 등록
+    sido.addEventListener('change', getgugun);
+
+    // 선택한 시도로 구군을 검색해서 비동기로 처리함
+    function getgugun(){
+        req = new XMLHttpRequest();
+        req.onreadystatechange = function(){
+            if (req.readyState == 4 && req.status == 200) {
+                makegu(req.responseText);
+            }
+        };
+        let qry = '?sido=' + sido.value //
+        req.open('get', url2+qry, true);
+        req.send();
+    }
+    function makegu(gg){
+        let cols = gg.split(',');
+
+        opt = document.createElement('option');
+        txt = document.createTextNode('--시/군/구--');
+        opt.appendChild(txt);
+        gugun.appendChild(opt);
+
+        for(let col of cols) {
+            if (col == '') continue;
+            opt = document.createElement('option');
+            opt.value = col.trim();
+            txt = document.createTextNode(col.trim());
             opt.appendChild(txt);
             gugun.appendChild(opt);
+        }
+    }
+
+    // 성태님 여기 아래부터는 아직 미완성이라 성태님이 해보셔요 ㅋㅋ
+    gugun.addEventListener('change', getdong);
+
+    function getdong(){
+        req = new XMLHttpRequest()
+        req.onreadystatechange = function(){
+            if(req.readyState == 4 && req.status == 200) {
+                makedong(req.responseText)
+            }
+        };
+        let qry = '?sido=' + sido.value + '&gugun=' + gugun.value;
+        req.open('get', url3+qry, true);
+        req.send();
+    }
+    function makedong(dd){
+        let cols = dd.split(',');
+
+        opt = createElement('option');
+        txt = createTextNode('--동/면/읍--');
+        opt.appendChild(txt);
+        dong.appendChild(opt);
+
+        for(let col of cols) {
+            if(col == '') continue;
+            opt = createElement('option');
+            opt.value = col.trim();
+            txt = createTextNode(col.trim());
+            opt.appendChild(txt);
+            dong.appendChild(opt)
         }
     }
 </script>
@@ -131,22 +195,22 @@ HTTP 프로토콜은 기본적으로 동기방식의 데이터 교환만을 지�
        설계가 복잡, 결과가 주어질때까지 시간이 걸리더라도
        그 동안 다른 작업을 할 수 있으므로 자원을 효율적으로 사용
        ex) 마트 물건 계산
--—>
+—>
+<!—
+    우편번호 테이블에서 데이터를 읽어오기 위한 JSP 환경 구축순서
+    1. JDK 설치 - amazon correto JDK 8 나는 openJDK 설치했음
+        환경변수 설정
 
-<!-
-우편번호 테이블에서 데이터를 읽어오기 위한 JSP 환경 구축순서
-1. JDK 설치 - amazon correto JDK 8
-    JAVA_HOME 환경변수 설정
-2. tomcat.apache.org에서 Tomcat 8.5.61 다운로드
- WAS : web application server
- 윈도우 : 64bit window zip
- c:/Java에 압축해제
-3. 기본페이지 띄우기
+    2. tomcat.apache.org에서 Tomcat 8.5.61 다운로드
+    WAS : web application server
+    윈도우 : 64bit window zip
+    c:/Java에 압축해제
+
+    3. 기본 페이지 띄우기
     bin 아래 startup.bat 실행
-    브라우져에서 127.0.0.1:8080 입력 -> welcome 페이지 확인
-4. 개발용 페이지 띄우기
-    webapps/ROOT 디렉토리에 zipcode폴더 생성후 관련 jsp파일 복사
-    브라우저에서 127.0.0.1:8080/zipcode/jsp 파일명
+    브라우저에 127.0.0.1:8080 입력 -> welcome 페이지 확인
 
-
--->
+    4. 개발용 페이지 띄우기
+    webapps/ROOT 디렉토리에 zipcode폴더 생성후 jsp파일 복사
+    브라우저에 127.0.0.1:8080/zipcode/jsp파일명
+—>
