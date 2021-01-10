@@ -153,16 +153,16 @@
     function makedong(dd){
         let cols = dd.split(',');
 
-        opt = createElement('option');
-        txt = createTextNode('--동/면/읍--');
+        opt = document.createElement('option');
+        txt = document.createTextNode('--동/면/읍--');
         opt.appendChild(txt);
         dong.appendChild(opt);
 
         for(let col of cols) {
             if(col == '') continue;
-            opt = createElement('option');
+            opt = document.createElement('option');
             opt.value = col.trim();
-            txt = createTextNode(col.trim());
+            txt = document.createTextNode(col.trim());
             opt.appendChild(txt);
             dong.appendChild(opt)
         }
@@ -195,8 +195,8 @@ HTTP 프로토콜은 기본적으로 동기방식의 데이터 교환만을 지�
        설계가 복잡, 결과가 주어질때까지 시간이 걸리더라도
        그 동안 다른 작업을 할 수 있으므로 자원을 효율적으로 사용
        ex) 마트 물건 계산
-—>
-<!—
+-->
+<!--
     우편번호 테이블에서 데이터를 읽어오기 위한 JSP 환경 구축순서
     1. JDK 설치 - amazon correto JDK 8 나는 openJDK 설치했음
         환경변수 설정
@@ -213,4 +213,14 @@ HTTP 프로토콜은 기본적으로 동기방식의 데이터 교환만을 지�
     4. 개발용 페이지 띄우기
     webapps/ROOT 디렉토리에 zipcode폴더 생성후 jsp파일 복사
     브라우저에 127.0.0.1:8080/zipcode/jsp파일명
+—>
+<!—
+    CORS
+    cross-origin resource sharing
+    보안상의 이유로 스크립트내에서 실행중인 호스트와 다른 호스트를 비동식방식으로 불러오지 못하게 제한하는 기법
+
+    11Ajax.html이 실행되는 호스트 - http://localhost:63342
+    비동기로 zipcode/sido.jsp가 실행되는 호스트 - http://localhost:8080
+    따라서, 동일한 서버에서 실행되어야 CORS로 인한 제한이 해소됨
+    => 11ajax.html과 sido.jsp를 동일한 서버에 업로드할 것!
 —>

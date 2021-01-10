@@ -33,7 +33,6 @@
 
         while (rs.next()) {
             String str = rs.getString(1);
-
             sb.append(str + ",");
         }
     } catch (Exception ex) {
