@@ -1,0 +1,22 @@
+.fatdiv { padding: 15px }
+.margin30 { margin: 30px 0 }
+.margin100 { margin: 100px 0 30px 0 }
+.margin1050 { margin: 0px 30px 30px 50px }
+
+.breadcrumb-item+.breadcrumb-item::before {
+    content: '';
+    margin-top: 5px; }
+
+bidragup { position: relative; top: -3px; !important; }
+.tblines { border-top: 3px solid black;
+    border-bottom: 3px solid black; }
+.tblines2 { border-bottom: 3px solid black; }
+.tbbg1 { background: #dff0f8; }
+.tbbg2 { background: #ccff99; }
+.tbbg3 { background: #ffffcc; }
+
+.cmtbg1 { background: yellow; padding: 5px 0; }
+.cmtbg2 { background: lime; padding: 5px 0; }
+.pushright { float:right; }
+.tbwide td:first-child { width:25% }
+.pushtop50 { margin-top: 50px;}
