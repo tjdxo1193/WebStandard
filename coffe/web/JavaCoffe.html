@@ -525,6 +525,27 @@
 
     /*  화면너비 0 ~ 480  */
 
+    /* 맵 */
+    body { padding: 0px; margin: 0px; }
+    .map_wrapper { width: 100%; overflow: hidden;margin: 0px auto; position: relative; }
+    video { width: 100%;}
+    .map_title { text-align: center; position: absolute; top: 200px; width: 100%; }
+    .map_title p {
+      margin-bottom: 0.7rem;
+      text-align: center;
+      font-size: 1.16em;
+      text-transform: uppercase;
+      letter-spacing: 10px;
+      font-weight: 400;
+      color: #ffffff; }
+    .map_title h2 {
+      display: inline-block;
+      font-size: 3.3em;
+      line-height: 1.25em;
+      font-weight: 400;
+      color: #ffffff; }
+    /* 맵 */
+
   </style>
 </head>
 
@@ -536,7 +557,7 @@
       <div class="header_top">
         <div class="hlogo">
           <a class="logo_linked_home" href="#">
-            <img alt="로고" class="header_logo" height="30px" src="./img/KakaoTalk_20210213_205230351.png" width="170px" />
+            <img alt="로고" class="header_logo" height="30px" src="./img/javapressologo.png" width="170px" />
           </a>
           <!-- 헤더 로고 -->
         </div>
@@ -559,90 +580,106 @@
       </div>
     </div>
     <nav class="header_navbar">
-      <ul class="nav_menu">
-        <li class="navbar_Item">
-          <a class="navbar_anchor" href="#">
-            <div class="navbar_element">
-              <div class="navbar_title">소개</div>
-            </div>
-          </a>
-          <span class="VisuallyHidden">
-              <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
-                서브 메뉴 소개 열기
-              </button>
-            </span>
-        </li>
-        <li class="navbar_Item">
-          <a class="navbar_anchor" href="#">
-            <div class="navbar_element">
+      <div class="nav_wrap">
+        <ul class="nav_menu">
+          <li class="navbar_Item">
+            <a class="navbar_anchor" href="#">
+              <div class="navbar_element">
+                <div class="navbar_title">소개</div>
+              </div>
+            </a>
+            <span class="VisuallyHidden">
+                  <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
+                    서브 메뉴 소개 열기
+                  </button>
+                </span>
+          </li>
+          <li class="navbar_Item">
+            <a class="navbar_anchor" href="#">
+              <div class="navbar_element">
+                    <span class="navbar_icon" style="width: 30px; height: 20px;">
+                    </span>
+                <div class="navbar_title">원두추천</div>
+              </div>
+            </a>
+            <span class="VisuallyHidden">
+                  <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
+                    서브 메뉴 원두추천 열기
+                  </button>
+                </span>
+          </li>
+          <li class="navbar_Item">
+            <a class="navbar_anchor" href="#">
+              <div class="navbar_element">
+                    <span class="navbar_icon" style="width: 30px; height: 20px;">
+                    </span>
+                <div class="navbar_title">머신추천</div>
+              </div>
+            </a>
+            <span class="VisuallyHidden">
+                  <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
+                    서브 메뉴 머신추천 열기
+                  </button>
+                </span>
+          </li>
+          <li class="navbar_Item">
+            <a class="navbar_anchor" href="#">
+              <div class="navbar_element">
+                    <span class="navbar_icon" style="width: 30px; height: 20px;">
+                    </span>
+                <div class="navbar_title">게시판</div>
+              </div>
+            </a>
+            <span class="VisuallyHidden">
+                  <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
+                    서브 메뉴 게시판 열기
+                  </button>
+                </span>
+          </li>
+          <li class="navbar_Item">
+            <a class="navbar_anchor" href="/review/list?cp=1">
+              <div class="navbar_element">
                 <span class="navbar_icon" style="width: 30px; height: 20px;">
                 </span>
-              <div class="navbar_title">원두추천</div>
-            </div>
-          </a>
-          <span class="VisuallyHidden">
+                <div class="navbar_title">후기</div>
+              </div>
+            </a>
+            <span class="VisuallyHidden">
               <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
-                서브 메뉴 원두추천 열기
+                후기 게시판 열기
               </button>
             </span>
-        </li>
-        <li class="navbar_Item">
-          <a class="navbar_anchor" href="#">
-            <div class="navbar_element">
-                <span class="navbar_icon" style="width: 30px; height: 20px;">
+          </li>
+          <li class="navbar_Item">
+            <a class="navbar_anchor" href="#">
+              <div class="navbar_element">
+                    <span class="navbar_icon" style="width: 30px; height: 20px;">
+                    </span>
+                <div class="navbar_title">매장찾기</div>
+              </div>
+            </a>
+            <span class="VisuallyHidden">
+                  <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
+                    서브 메뉴 마장찾기 열기
+                  </button>
                 </span>
-              <div class="navbar_title">머신추천</div>
-            </div>
-          </a>
-          <span class="VisuallyHidden">
-              <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
-                서브 메뉴 머신추천 열기
-              </button>
-            </span>
-        </li>
-        <li class="navbar_Item">
-          <a class="navbar_anchor" href="#">
-            <div class="navbar_element">
-                <span class="navbar_icon" style="width: 30px; height: 20px;">
+          </li>
+          <li class="navbar_Item" id="nav_e-shop">
+            <a class="navbar_anchor" href="#">
+              <div class="navbar_element">
+                    <span class="navbar_icon" style="width: 30px; height: 20px;">
+                    </span>
+                <div class="navbar_title">e-shop</div>
+              </div>
+            </a>
+            <span class="VisuallyHidden">
+                  <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
+                    서브 메뉴 e-shop 열기
+                  </button>
                 </span>
-              <div class="navbar_title">게시판</div>
-            </div>
-          </a>
-          <span class="VisuallyHidden">
-              <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
-                서브 메뉴 게시판 열기
-              </button>
-            </span>
-        </li>
-        <li class="navbar_Item">
-          <a class="navbar_anchor" href="#">
-            <div class="navbar_element">
-                <span class="navbar_icon" style="width: 30px; height: 20px;">
-                </span>
-              <div class="navbar_title">매장찾기</div>
-            </div>
-          </a>
-          <span class="VisuallyHidden">
-              <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
-                서브 메뉴 마장찾기 열기
-              </button>
-            </span>
-        </li>
-        <li class="navbar_Item" id="nav_e-shop">
-          <a class="navbar_anchor" href="#">
-            <div class="navbar_element">
-                <span class="navbar_icon" style="width: 30px; height: 20px;">
-                </span>
-              <div class="navbar_title">e-shop</div>
-            </div>
-          </a>
-          <span class="VisuallyHidden">
-              <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
-                서브 메뉴 e-shop 열기
-              </button>
-            </span>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </div>
     </nav>
   </div>
 </header>
@@ -650,15 +687,85 @@
 
 <!-- 메인영역 -->
 <main id="middle">
-    <div class="main_container">
+  <div class="map_wrapper">
+    <video muted autoplay loop>
+      <source src="video/mapbgv1.mp4" type="video/mp4">
+      <strong>Your browser does not support the video tag.</strong>
+    </video>
+    <div class="map_title">
+      <p>매장 찾기</p>
+      <h2>이용 목적에 맞는 매장 찾기</h2>
+    </div>
+    <div class="adress_input_box">
+      <div class="tabs">
+        <ul id="shops" role="tablist">
+          <li id="storeTab-boutique" class="boutique a11y-tabpanel-tab" role="tab" aria-controls="storePanel-boutique" aria-selected="true" tabindex="1">
+            <h2>
+              <a href="javascript:void(0);" data-type="boutique" tabindex="-1" class="active">
+                                <span class="icon">
+                                    <img src="assets/svg/layout/capsules.svg" alt="">
+                                </span>
+                <span class="label">캡슐 구매</span>
+              </a>
+            </h2>
+          </li>
+          <li id="storeTab-point_of_sale" class="point_of_sale a11y-tabpanel-tab" role="tab" aria-controls="storePanel-point_of_sale" aria-selected="false" tabindex="-1">
+            <h2>
+              <a href="javascript:void(0);" data-type="point_of_sale" tabindex="-1">
+                                <span class="icon">
+                                    <img src="assets/svg/layout/machines.svg" alt="">
+                                </span>
+                <span class="label">머신 구매</span>
+              </a>
+            </h2>
+          </li>
+          <li id="storeTab-recycling" class="recycling a11y-tabpanel-tab" role="tab" aria-controls="storePanel-recycling" aria-selected="false" tabindex="-1">
+            <h2>
+              <a href="javascript:void(0);" data-type="recycling" tabindex="-1">
+                                <span class="icon">
+                                    <img src="assets/svg/layout/recycling.svg" alt="">
+                                </span>
+                <span class="label">캡슐 재활용</span>
+              </a>
+            </h2>
+          </li>
+        </ul>
+      </div>
+      <div id="search" class="form-search hidden-clear-btn">
+        <div class="a11y-hidden" id="locationExplanation">검색창에 원하시는 지역을 입력해보세요. 위 아래 화살표를 이용하여, 추천 지역을 확인하실 수 있습니다. 지역을 선택하신 후, 커서를 옮겨 매장 상세 정보를 확인하실 수 있으며, 운영 시간도 함께 확인 가능 합니다.</div>
+        <form id="locationForm" role="search" action="." method="get" accept-charset="UTF-8">
+          <div class="location">
+            <label for="location" class="a11y-hidden">주소, 우편번호, 시/도</label>
+            <input id="location" class="form-text pac-target-input" type="text" value="" tabindex="1" placeholder="주소, 우편번호, 시/도" aria-describedby="locationExplanation" autocomplete="off">
+            <button class="geoloc-btn activated" tabindex="2" type="button" aria-label="내 위치에서 가까운 매장 찾기"></button>
+            <button class="clear-btn" tabindex="-1" type="button" aria-hidden="true"></button>
+          </div>
 
+          <div class="trigger-options">
+            <a href="javascript:void(0);" tabindex="3" aria-label="상세 검색 열기 또는 닫기. 검색창 닫힘 상태" class="">
+              <i class="icon icon_options">
+                <svg viewBox="0 0 17 18" class="svg_options">
+                  <use xlink:href="./assets/svg/sprite.svg#svg-options"></use>
+                  <use xlink:href="#svg-options"></use>
+                </svg>
+              </i>
+            </a>
+
+            <div id="filters" class="list-options">
+              <ul aria-labelledby="demo">
+                <li class="vis" "=""><input type="checkbox" class="form-checkbox" value="demo" name="filters[]" id="flt-demo" vis"=""><label class="demo active" for="flt-demo" tabindex="4">무료 커피 시음</label></li><li class=""><input type="checkbox" class="form-checkbox" value="pickup" name="filters[]" id="flt-pickup"><label class="pickup active" for="flt-pickup" tabindex="5">부티크 직접 수령</label></li><li class=""><input type="checkbox" class="form-checkbox" value="wifi" name="filters[]" id="flt-wifi"><label class="wifi active" for="flt-wifi" tabindex="6">WiFi</label></li><li class="vis" "=""><input type="checkbox" class="form-checkbox" value="recycling" name="filters[]" id="flt-recycling" vis"=""><label class="recycling active" for="flt-recycling" tabindex="7">재활용 캡슐 수거 (B2C)</label></li><li class=""><input type="checkbox" class="form-checkbox" value="wheelchair" name="filters[]" id="flt-wheelchair"><label class="wheelchair active" for="flt-wheelchair" tabindex="8">휠체어 진입 가능</label></li><li class=""><input type="checkbox" class="form-checkbox" value="cube" name="filters[]" id="flt-cube"><label class="cube active" for="flt-cube" tabindex="9">N/A</label></li><li class=""><input type="checkbox" class="form-checkbox" value="appointment" name="filters[]" id="flt-appointment"><label class="appointment active" for="flt-appointment" tabindex="10">N/A</label></li><li class=""><input type="checkbox" class="form-checkbox" value="b2b" name="filters[]" id="flt-b2b"><label class="b2b active" for="flt-b2b" tabindex="11">재활용 캡슐 수거 (B2B)</label></li><li class=""><input type="checkbox" class="form-checkbox" value="npoint" name="filters[]" id="flt-npoint"><label class="npoint active" for="flt-npoint" tabindex="12">filter_npoint</label></li>                                </ul>
+            </div></div>
+          <button type="submit" class="form-submit" id="btnSearch" tabindex="4"><span>검색</span></button>
+        </form>
+      </div>
+    </div>
   </div>
 </main>
 <!-- //메인영역 -->
 
 <!-- 푸터영역 -->
-<footer class="bg-black" id="bottom">
-  <div class="bg-black footer_container" id="footer">
+<footer id="bottom" class="bg-black">
+  <div id="footer" class="bg-black footer_container">
     <div class="footer_top bg-black"></div>
     <div class="footer_block bg-black">
       <div class="footer_bar">
@@ -666,10 +773,10 @@
           <h3 class="VisuallyHidden">언어 및 국가 선택</h3>
           <span class="VisuallyHidden">현재 대한민국 웹사이트에 접속 중이십니다. 국가 변경을 원하시면,
               여기를 클릭하세요.</span>
-          <span class="contries_flag"><img src="./img/south-korea.png" /></span>
+          <span class="contries_flag"><img src="./img/base/south-korea.png" /></span>
           <div class="languageswitcher">
-            <form action="" class="languageswitcher_frm" method="post">
-              <select class="countries_selection">
+            <form class="languageswitcher_frm" action="" method="post">
+              <select class="countries_selection" style="box-sizing: border-box !important;">
                 <option value="kor">한국어</option>
                 <option value="eng">English</option>
               </select>
@@ -732,32 +839,32 @@
         </div>
       </div>
       <div class="footer_bottom">
-        <div class="footer_social">
+        <div class="footer_social1">
           <span class="social_label">자바프레소 계정을 팔로우 하세요</span>
-          <ul class="socialLink_list">
-            <li class="socialLink_item">
-              <a href="#"><img alt="인스타그램" src="./img/instagram.png" /></a>
+          <ul class="s_list">
+            <li class="s_item1">
+              <a href="#"><img src="./img/base/instagram.png" alt="인스타그램" /></a>
             </li>
-            <li class="socialLink_item">
-              <a href="#"><img alt="페이스북" src="./img/facebook.png" /></a>
+            <li class="s_item1">
+              <a href="#"><img src="./img/social/facebook.png" alt="페이스북" /></a>
             </li>
-            <li class="socialLink_item">
-              <a href="#"><img alt="유튜브" src="./img/youtube.png" /></a>
+            <li class="s_item1">
+              <a href="#"><img src="./img/social/youtube.png" alt="유튜브" /></a>
             </li>
-            <li class="socialLink_item">
-              <a href="#"><img alt="트위터" src="./img/twitter.png" /></a>
+            <li class="s_item1">
+              <a href="#"><img src="./img/social/twitter.png" alt="트위터" /></a>
             </li>
-            <li class="socialLink_item">
-              <a href="#"><img alt="핀터레스트" src="./img/pinterest.png" /></a>
+            <li class="s_item1">
+              <a href="#"><img src="./img/social/pinterest.png" alt="핀터레스트" /></a>
             </li>
           </ul>
         </div>
-        <a class="footer_top_page_link" href="#top">맨 위로 가기<img alt="#" src="./img/up.png" /></a>
+        <a class="footer_top_page_link" href="#top">맨 위로 가기<img src="./img/up.png" alt="#" /></a>
         <div class="footer_copyright">
           <a class="footer_link" href="#" target="_blank">
-            <img alt="logo" src="./img/KakaoTalk_20210213_205230351.png" />
+            <img alt="logo" src="./img/javapressologo.png" />
             <span class="VisuallyHidden">이 링크는 새로운 창을 엽니다.
-              </span>
+                        </span>
           </a>
           <span> <em>Javapresso</em> S.A. 2021</span>
         </div>

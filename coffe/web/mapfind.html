@@ -1,25 +1,547 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="ko">
 <head>
     <meta charset="utf-8">
-    <title>지도 생성하기</title>
+    <title>Map</title>
 
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/reset.css" rel="stylesheet">
+    <style>
+        body { padding: 0px; margin: 0px; }
+        .map_wrapper { width: 100%; overflow: hidden;margin: 0px auto; position: relative; }
+        video { width: 100%;}
+        .map_title { text-align: center; position: absolute; top: 115px; width: 100%; }
+        .map_title p {
+            margin-bottom: 1.25rem;
+            text-align: center;
+            font-size: 1.05em;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            font-weight: 400;
+            color: #ffffff; }
+        .map_title h2 {
+            display: inline-block;
+            font-size: 3.4em;
+            line-height: 1.25em;
+            font-weight: 400;
+            color: #ffffff;
+        }
+
+        .adress_input_box {
+            position: absolute;
+            top: 230px;
+            width: 100%;
+        }
+        .box_wrap {
+            width: 800px;
+            height: 183px;
+            margin: 0 auto;
+        }
+
+        .box_wrap .tabs {
+            width: 800px;
+            height: 113px;
+            text-align: center;
+        }
+
+        .tabs #shops {
+            margin: 0;
+            padding-left: 0;
+            list-style: none;
+            display: table;
+            table-layout: fixed;
+            letter-spacing: 1px;
+            line-height: 1.1em;
+            text-align: center;
+            width: 100%;
+        }
+
+        #shops .icon {
+            display: block;
+            width: 80px;
+            height: 83px;
+            line-height: 70px;
+            vertical-align: middle;
+            margin: auto;
+        }
+
+        .icon img {
+            max-width: 100%;
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border-style: none;
+        }
+
+        .box_list a {
+            display: block;
+            width: 100%;
+            color: #6E6E6E;
+            font-weight: 700;
+            padding-bottom: 15px;
+            -webkit-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+            border-left: 1px solid rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            background: #F3F3F3;
+        }
+
+        #shops .box_list {
+            margin: 0 auto;
+            display: table-cell;
+            width: 100%;
+        }
+        #shops a:hover {
+            background: #fff;
+        }
+        #search {
+            touch-action: none;
+            background: #FFF;
+            padding: 15px;
+            z-index: 1;
+            width: 771px;
+            height: 40px;
+            position: relative;
+        }
+
+        .form_text {
+            padding-right: 40px;
+        }
+
+        .form_search .form_text {
+        }
+
+        .form_text {
+            border-radius: 3px;
+            background: transparent;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 0 10px;
+            letter-spacing: 0.5px;
+            display: block;
+            line-height: 40px;
+            font-size: 16px;
+            height: 40px;
+            -webkit-transition: all 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+            transition: all 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        }
+
+        .form_search .form_text {
+            float: left;
+            padding-right: 70px;
+            width: calc(70% - 50px);
+        }
+
+        .geoloc-btn.activated {
+            background: url(./img/gps.png);
+            background-size: cover;
+        }
+
+        .geoloc-btn {
+            float: left;
+            position: absolute;
+            background: url(./img/gps.png);
+            background-size: cover;
+            width: 30px;
+            height: 30px;
+            font-size: 0;
+            margin-left: -40px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+
+        .form_search .form-submit {
+            width: calc(30% - 60px);
+            margin-top: 0;
+            float: left;
+            overflow: hidden;
+            position: absolute;
+            right: 10px;
+            top: 15px;
+        }
+
+        .form-submit {
+            display: inline-block;
+            cursor: pointer;
+            line-height: 40px;
+            height: 40px;
+            text-align: center;
+            padding: 0 20px;
+            text-transform: uppercase;
+            border-radius: 3px;
+            font-weight: 700;
+            color: #FFF;
+            letter-spacing: 2px;
+            background: #986F38;
+            overflow: hidden;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            -webkit-transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+            transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+        }
+
+        input {
+            color: inherit;
+            font: inherit;
+            -webkit-writing-mode: horizontal-tb !important;
+            text-rendering: auto;
+            letter-spacing: normal;
+            word-spacing: normal;
+            text-transform: none;
+            text-indent: 0px;
+            text-shadow: none;
+            display: inline-block;
+            text-align: start;
+            -webkit-rtl-ordering: logical;
+            cursor: text;
+            margin: 0em;
+            font: 400 13.3333px Arial;
+            padding: 1px 2px;
+            border-width: 2px;
+            border-style: inset;
+            border-image: initial;
+        }
+
+</style>
 </head>
 <body>
-<!-- 지도를 표시할 div 입니다 -->
-<div id="map" style="width:100%;height:350px;"></div>
+<header id="top">
+    <div id="header">
+        <div class="top_wrapper">
+            <div class="header_top">
+                <div class="hlogo">
+                    <a class="logo_linked_home" href="#">
+                        <img alt="로고" class="header_logo" height="30px" src="./img/base/javapressologo.png" width="170px" />
+                    </a>
+                    <!-- 헤더 로고 -->
+                </div>
+                <div class="header_customer">
+                    <div class="header_login">
+                        <button class="LoginDropdownButton" id="hloginbtn">
+                            로그인 하기
+                            <!--aria-expanded="false"-->
+                        </button>
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e27639b71863fd8f4c7569ec19a53574"></script>
-<script>
-    var mapContainer = document.getElementById('map'), // 지도를 표시할 div
-        mapOption = {
-            center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-            level: 3 // 지도의 확대 레벨
-        };
+                    </div>
+                    <div class="header_join">
+                        <button class="JoinDropdownButton" id="hjoinbtn">
+                            회원가입은 여기에서
+                            <!--aria-expanded="false"-->
+                        </button>
+                    </div>
+                </div>
+                <!-- 헤더 커스텀(로그인, 회원가입) -->
+            </div>
+        </div>
+        <nav class="header_navbar">
+            <div class="nav_wrap">
+                <ul class="nav_menu">
+                    <li class="navbar_Item">
+                        <a class="navbar_anchor" href="#">
+                            <div class="navbar_element">
+                                <div class="navbar_title">소개</div>
+                            </div>
+                        </a>
+                        <span class="VisuallyHidden">
+                  <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
+                    서브 메뉴 소개 열기
+                  </button>
+                </span>
+                    </li>
+                    <li class="navbar_Item">
+                        <a class="navbar_anchor" href="#">
+                            <div class="navbar_element">
+                    <span class="navbar_icon" style="width: 30px; height: 20px;">
+                    </span>
+                                <div class="navbar_title">원두추천</div>
+                            </div>
+                        </a>
+                        <span class="VisuallyHidden">
+                  <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
+                    서브 메뉴 원두추천 열기
+                  </button>
+                </span>
+                    </li>
+                    <li class="navbar_Item">
+                        <a class="navbar_anchor" href="#">
+                            <div class="navbar_element">
+                    <span class="navbar_icon" style="width: 30px; height: 20px;">
+                    </span>
+                                <div class="navbar_title">머신추천</div>
+                            </div>
+                        </a>
+                        <span class="VisuallyHidden">
+                  <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
+                    서브 메뉴 머신추천 열기
+                  </button>
+                </span>
+                    </li>
+                    <li class="navbar_Item">
+                        <a class="navbar_anchor" href="#">
+                            <div class="navbar_element">
+                    <span class="navbar_icon" style="width: 30px; height: 20px;">
+                    </span>
+                                <div class="navbar_title">게시판</div>
+                            </div>
+                        </a>
+                        <span class="VisuallyHidden">
+                  <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
+                    서브 메뉴 게시판 열기
+                  </button>
+                </span>
+                    </li>
+                    <li class="navbar_Item">
+                        <a class="navbar_anchor" href="/review/list?cp=1">
+                            <div class="navbar_element">
+                <span class="navbar_icon" style="width: 30px; height: 20px;">
+                </span>
+                                <div class="navbar_title">후기</div>
+                            </div>
+                        </a>
+                        <span class="VisuallyHidden">
+              <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
+                후기 게시판 열기
+              </button>
+            </span>
+                    </li>
+                    <li class="navbar_Item">
+                        <a class="navbar_anchor" href="#">
+                            <div class="navbar_element">
+                    <span class="navbar_icon" style="width: 30px; height: 20px;">
+                    </span>
+                                <div class="navbar_title">매장찾기</div>
+                            </div>
+                        </a>
+                        <span class="VisuallyHidden">
+                  <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
+                    서브 메뉴 마장찾기 열기
+                  </button>
+                </span>
+                    </li>
+                    <li class="navbar_Item" id="nav_e-shop">
+                        <a class="navbar_anchor" href="#">
+                            <div class="navbar_element">
+                    <span class="navbar_icon" style="width: 30px; height: 20px;">
+                    </span>
+                                <div class="navbar_title">e-shop</div>
+                            </div>
+                        </a>
+                        <span class="VisuallyHidden">
+                  <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
+                    서브 메뉴 e-shop 열기
+                  </button>
+                </span>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
 
-    // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
-    var map = new kakao.maps.Map(mapContainer, mapOption);
-</script>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=services,clusterer,drawing"></script>
+<main id="middle">
+    <div class="map_wrapper">
+        <video autoplay loop muted>
+            <source src="video/mapbgv1.mp4" type="video/mp4">
+            <strong>Your browser does not support the video tag.</strong>
+        </video>
+        <div class="map_title">
+            <p>매장 찾기</p>
+            <h2>이용 목적에 맞는 매장 찾기</h2>
+        </div>
+        <div class="adress_input_box">
+            <div class="box_wrap">
+                <div class="tabs">
+                    <ul id="shops" role="tablist">
+                        <li class="box_list">
+                            <h2>
+                                <a tabindex="-1">
+                                    <span class="icon">
+                                        <img alt="캡슐 구매" src="./img/capsulecoffee.png">
+                                    </span>
+                                    <span class="label">캡슐 구매</span>
+                                </a>
+                            </h2>
+                        </li>
+                        <li class="box_list">
+                            <h2>
+                                <a tabindex="-1">
+                                    <span class="icon">
+                                        <img alt="머신 구매" src="./img/coffeemaker.png">
+                                    </span>
+                                    <span class="label">머신 구매</span>
+                                </a>
+                            </h2>
+                        </li>
+                        <li class="box_list">
+                            <h2>
+                                <a tabindex="-1">
+                                    <span class="icon">
+                                        <img alt="캡슐 재활용" src="./img/recycle.png">
+                                    </span>
+                                    <span class="label">캡슐 재활용</span>
+                                </a>
+                            </h2>
+                        </li>
+                    </ul>
+                </div>
+                <div id="search" class="form_search">
+                    <form id="locationForm" role="search" action="." method="get" accept-charset="UTF-8">
+                        <div class="location">
+                            <label for="location" class="a11y-hidden"></label>
+                            <input id="location" class="form_text" type="text" value="" tabindex="1" placeholder="주소, 우편번호, 시/도" aria-describedby="locationExplanation" autocomplete="off">
+                            <button class="geoloc-btn activated" tabindex="2" type="button" aria-label="내 위치에서 가까운 매장 찾기"></button>
+                            <button class="clear-btn" tabindex="-1" type="button" aria-hidden="true"></button>
+                        </div>
+                        <button type="submit" class="form-submit" id="btnSearch" tabindex="4"><span>검색</span></button>
+                    </form>
+                </div>
+                <div id="map" style="width:100%; height: 100vh;"></div>
+                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1CCvsEeWN2zyvgcL8RGZ67905NDrwOgM&callback=initMap&region=kr"></script>
+                <script>
+                    function initMap() {
+                        var seoul = { lat: 37.5642135 ,lng: 127.0016985 };
+                        var map = new google.maps.Map(
+                            document.getElementById('map'), {
+                                zoom: 12,
+                                center: seoul
+                            });
+
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- //메인영역 -->
+
+<!-- 푸터영역 -->
+<footer class="bg-black" id="bottom">
+    <div class="bg-black footer_container" id="footer">
+        <div class="footer_top bg-black"></div>
+        <div class="footer_block bg-black">
+            <div class="footer_bar">
+                <div class="footer_init">
+                    <h3 class="VisuallyHidden">언어 및 국가 선택</h3>
+                    <span class="VisuallyHidden">현재 대한민국 웹사이트에 접속 중이십니다. 국가 변경을 원하시면,
+              여기를 클릭하세요.</span>
+                    <span class="contries_flag"><img src="./img/base/south-korea.png" /></span>
+                    <div class="languageswitcher">
+                        <form action="" class="languageswitcher_frm" method="post">
+                            <select class="countries_selection" style="box-sizing: border-box !important;">
+                                <option value="kor">한국어</option>
+                                <option value="eng">English</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer_links">
+                    <h3 class="VisuallyHidden">웹사이트 링크</h3>
+                    <ul class="footerline1">
+                        <li class="footerline_item">
+                            <a class="footerline_item_link" href="#" target="_blank">판매이용약관
+                                <span class="VisuallyHidden">이 링크는 새로운 창을 엽니다.
+                  </span>
+                            </a>
+                        </li>
+                        <li class="footerline_item">
+                            <a class="footerline_item_link" href="#">개인정보 처리방침
+                            </a>
+                        </li>
+                        <li class="footerline_item">
+                            <a class="footerline_item_link" href="#">쿠키 </a>
+                        </li>
+                        <li class="footerline_item">
+                            <a class="footerline_item_link" href="#">고객지원 </a>
+                        </li>
+                        <li class="footerline_item">
+                            <a class="footerline_item_link" href="#" target="_blank">자바프레소 프로페셔널
+                                <span class="VisuallyHidden">이 링크는 새로운 창을 엽니다.
+                  </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="footerline2">
+                        <li class="footerline_item">
+                            <a class="AccessibleLink FooterLine__item-link" href="#" target="_blank">커피 레시피
+                                <span class="VisuallyHidden">이 링크는 새로운 창을 엽니다.</span>
+                            </a>
+                        </li>
+                        <li class="footerline_item">
+                            <a class="footerline_item_link" href="#" target="_blank">용어찾기
+                                <span class="VisuallyHidden">이 링크는 새로운 창을 엽니다.
+                  </span>
+                            </a>
+                        </li>
+                        <li class="footerline_item">
+                            <a class="footerline_item_link" href="#" target="_blank">회사소개
+                                <span class="VisuallyHidden">이 링크는 새로운 창을 엽니다.</span></a>
+                        </li>
+                        <li class="footerline_item">
+                            <a class="footerline_item_link" href="#">채용</a>
+                        </li>
+                        <li class="footerline_item">
+                            <a class="footerline_item_link" href="#" target="_blank">사이트맵
+                                <span class="VisuallyHidden">이 링크는 새로운 창을 엽니다.</span></a>
+                        </li>
+                        <li class="footerline_item">
+                            <a class="footerline_item_link" href="#">웹 접근성</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div class="footer_social1">
+                    <span class="social_label">자바프레소 계정을 팔로우 하세요</span>
+                    <ul class="s_list">
+                        <li class="s_item1">
+                            <a href="#"><img alt="인스타그램" src="./img/base/instagram.png" /></a>
+                        </li>
+                        <li class="s_item1">
+                            <a href="#"><img alt="페이스북" src="./img/base/facebook.png" /></a>
+                        </li>
+                        <li class="s_item1">
+                            <a href="#"><img alt="유튜브" src="./img/base/youtube.png" /></a>
+                        </li>
+                        <li class="s_item1">
+                            <a href="#"><img alt="트위터" src="./img/base/twitter.png" /></a>
+                        </li>
+                        <li class="s_item1">
+                            <a href="#"><img alt="핀터레스트" src="./img/base/pinterest.png" /></a>
+                        </li>
+                    </ul>
+                </div>
+                <a class="footer_top_page_link" href="#top">맨 위로 가기<img alt="#" src="./img/base/up.png" /></a>
+                <div class="footer_copyright">
+                    <a class="footer_link" href="#" target="_blank">
+                        <img alt="logo" src="./img/base/javapressologo.png" />
+                        <span class="VisuallyHidden">이 링크는 새로운 창을 엽니다.
+                        </span>
+                    </a>
+                    <span> <em>Javapresso</em> S.A. 2021</span>
+                </div>
+            </div>
+            <div class="footer_local">
+                <div class="local_elements">
+                    <ul>
+                        <li>상호 : 네슬레코리아 유한책임회사</li>
+                        <li>대표자 : 카스텐 퀴메</li>
+                        <li>사업자등록번호 : 110-86-10100</li>
+                        <li>통신판매업신고 : 2014-서울서대문-0247</li>
+                    </ul>
+                    <ul>
+                        <li>채무지급보증안내</li>
+                        <li>대표번호 : 080-734-1111</li>
+                        <li>이메일 : club.korea@nespresso.com</li>
+                        <li>주소 : 서울시 서대문구 충정로70 웨스트게이트타워 16층</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- //푸터영역 -->
+
+<!-- script -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </body>
 </html>
