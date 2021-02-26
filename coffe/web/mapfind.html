@@ -215,7 +215,7 @@
         }
         #map {
             position: absolute;
-            top: 183px;
+            top: 176px;
             left: 0;
 
         }
@@ -580,48 +580,21 @@
     $(document).ready(function() {
         $("#map").hide();
 
-
-
-        //[2] more...클릭시 보이기 및 숨기기
-
         $( '#btnSearch' ).click( function() {
             $('#video_area, #background_video,  .map_title').fadeOut();
-            $('#map').show();
-            $('.map_wrapper').css('height', '')
+            $('#map').fadeIn(2000);
+
+            var menu_flag = true;
+            if (menu_flag) {
+                $(".box_wrap").animate(
+                    {width: '=50%'}, "slow");
+                $("#adress_input_box").animate(
+                    {left: '=300px'}, "slow");
+                menu_flag = false;
+            }
         } );
 
     });
-
-</script>
-<script>
-
-
-
-    var menu_flag = true;
-
-
-
-    $("#btnSearch").click(function(){
-
-        if (menu_flag) {
-            $(".box_wrap").animate(
-                {width: '-=50%'}, "slow");
-            $("#adress_input_box").animate(
-                {left: '-=300px'}, "slow");
-            menu_flag = false;
-
-        } else {
-
-            $("#adress_input_box").animate({"left": "+=300px"}, "slow");
-
-            menu_flag = true;
-
-        }
-
-    });
-
-
-
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
