@@ -12,7 +12,12 @@
   <!-- CSS STYLE -->
   <link href="css/reset.css" rel="stylesheet" />
   <link href="css/style.css" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
     * {
       margin: 0;
@@ -494,8 +499,81 @@
       color: #666;
     }
 
+    .form-control {
+      box-shadow: none;
+      border-radius: 4px;
+      border-color: #dfe3e8;
+    }
+    .form-control:focus {
+      border-color: #29c68c;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
 
+    .navbar .navbar-brand b {
+      font-weight: bold;
+      color: #29c68c;
+    }
+    .navbar ul.nav li a {
+      color: #999;
+    }
+    .navbar ul.nav li a:hover, .navbar ul.nav li a:focus {
+      color: #29c68c !important;
+    }
+    .navbar ul.nav li.active > a, .navbar ul.nav li.open > a {
+      color: #26bb84 !important;
+      background: transparent !important;
+    }
+    .input-group-addon {
+      box-shadow: none;
+      border-radius: 2px 0 0 2px;
+      background: #f5f5f5;
+      border-color: #dfe3e8;
+      font-size: 16px;
+    }
+    .btn {
+      border-radius: 2px;
+      color: #fff;
+      border-color: #29c68c;
+      background: #29c68c;
+      outline: none;
+    }
+    .navbar .form-inline .btn:hover, .navbar .form-inline .btn:focus {
+      border-color: #26bb84;
+      background: #26bb84;
+    }
 
+    .btn {
+      margin-left: 4px;
+    }
+    .navbar .search-form .form-control {
+      border-radius: 2px;
+    }
+    .input-group {
+      margin-right: 4px;
+      float: left;
+    }
+    .navbar .login-form .form-control {
+      max-width: 158px;
+      border-radius: 0 2px 2px 0;
+    }
+    .dropdown-toggle::after {
+      display: none;
+    }
+    .navbar .dropdown-menu {
+      border-radius: 1px;
+      border-color: #e5e5e5;
+      box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    }
+    .navbar .dropdown-menu li a {
+      padding: 6px 20px;
+    }
+    .dropdown-menu {
+      width: 505px;
+      padding: 20px;
+      left: auto;
+      right: 0;
+      font-size: 14px;
+    }
 
     /*  화면너비 768 ~ 1200px */
     @media (max-width: 1240px) {
@@ -563,11 +641,25 @@
         </div>
         <div class="header_customer">
           <div class="header_login">
-            <button class="LoginDropdownButton" id="hloginbtn">
+            <button data-toggle="dropdown" class="LoginDropdownButton dropdown-toggle" id="hloginbtn" aria-expanded="false">
               로그인 하기
               <!--aria-expanded="false"-->
             </button>
-
+            <ul class="dropdown-menu">
+              <li>
+                <form class="form-inline login-form" action="." method="post">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" class="form-control" placeholder="Username" required="">
+                  </div>
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                    <input type="text" class="form-control" placeholder="Password" required="">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+              </li>
+            </ul>
           </div>
           <div class="header_join">
             <button class="JoinDropdownButton" id="hjoinbtn">
