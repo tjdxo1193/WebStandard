@@ -7,6 +7,7 @@
     <link href="./css/style.css" rel="stylesheet">
     <link href="./css/reset.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <style>
         body { padding: 0px; margin: 0px; }
         .map_wrapper { width: 100vw; height: 100vh; overflow: hidden; margin: 0px auto; position: relative; }
@@ -220,7 +221,79 @@
 
         }
 
-</style>
+        #description {
+            font-family: Roboto;
+            font-size: 15px;
+            font-weight: 300;
+        }
+
+        #infowindow-content .title {
+            font-weight: bold;
+        }
+
+        #infowindow-content {
+            display: none;
+        }
+
+        #map #infowindow-content {
+            display: inline;
+        }
+
+        .pac-card {
+            margin: 10px 10px 0 0;
+            border-radius: 2px 0 0 2px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            outline: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            background-color: #fff;
+            font-family: Roboto;
+        }
+
+        #pac-container {
+            padding-bottom: 12px;
+            margin-right: 12px;
+        }
+
+        .pac-controls {
+            display: inline-block;
+            padding: 5px 11px;
+        }
+
+        .pac-controls label {
+            font-family: Roboto;
+            font-size: 13px;
+            font-weight: 300;
+        }
+
+        #pac-input {
+            background-color: #fff;
+            font-family: Roboto;
+            font-size: 15px;
+            font-weight: 300;
+            margin-left: 12px;
+            padding: 0 11px 0 13px;
+            text-overflow: ellipsis;
+            width: 400px;
+        }
+
+        #pac-input:focus {
+            border-color: #4d90fe;
+        }
+
+        #title {
+            color: #fff;
+            background-color: #4d90fe;
+            font-size: 25px;
+            font-weight: 500;
+            padding: 6px 12px;
+        }
+
+        #target {
+            width: 345px;
+        }
+
+    </style>
 </head>
 <body>
 <header id="top">
@@ -359,13 +432,13 @@
 <main id="middle">
     <div class="map_wrapper">
         <div id="video_area">
-            <video src="video/mapbgv1.mp4" id="background_video" preload="auto" autoplay="autoplay" loop="loop" muted="muted" volume="0"></video>
+            <video autoplay="autoplay" id="background_video" loop="loop" muted="muted" preload="auto" src="video/mapbgv1.mp4" volume="0"></video>
         </div>
         <div class="map_title">
             <p>매장 찾기</p>
             <h2>이용 목적에 맞는 매장 찾기</h2>
         </div>
-        <div id="adress_input_box" class="adress_input_box">
+        <div class="adress_input_box" id="adress_input_box">
             <div class="box_wrap">
                 <div class="tabs">
                     <ul id="shops" role="tablist">
@@ -401,34 +474,157 @@
                         </li>
                     </ul>
                 </div>
-                <div id="search" class="form_search">
-                    <form id="locationForm" role="search" action="." method="get" accept-charset="UTF-8">
+                <div class="form_search" id="search">
+                    <form accept-charset="UTF-8" action="." id="locationForm" method="get" role="search">
                         <div class="location">
-                            <label for="location" class="a11y-hidden"></label>
-                            <input id="location" class="form_text" type="text" value="" tabindex="1" placeholder="주소, 우편번호, 시/도" aria-describedby="locationExplanation" autocomplete="off">
-                            <button class="geoloc-btn activated" tabindex="2" type="button" aria-label="내 위치에서 가까운 매장 찾기"></button>
-                            <button class="clear-btn" tabindex="-1" type="button" aria-hidden="true"></button>
+                            <label class="a11y-hidden" for="pac-input"></label>
+                            <input aria-describedby="locationExplanation" autocomplete="off" class="form_text controls" id="pac-input" placeholder="주소, 우편번호, 시/도" tabindex="1" type="text" value="">
+                            <button aria-label="내 위치에서 가까운 매장 찾기" class="geoloc-btn activated" tabindex="2" type="button"></button>
+                            <button aria-hidden="true" class="clear-btn" tabindex="-1" type="button"></button>
                         </div>
-                        <button type="button" onclick="" class="form-submit" id="btnSearch" tabindex="4"><span>검색</span></button>
+                        <button class="form-submit" id="btnSearch" onclick="" tabindex="4" type="button"><span>검색</span></button>
                     </form>
+                </div>
+                <div class="open closed" id="results">
+                    <div aria-hidden="true" class="results-header nb-shops hidden" id="storeResultsHeader">
+                        <span>19</span> 검색 결과                            </div>
+                    <div class="results-empty loading" style="display: none;">
+                        <img alt="" src="img/loader.gif">
+                    </div>
+                    <div class="results-ctn vscroll hidden">
+                        <ul aria-labelledby="storeResultsHeader storeResultDesc" id="store-locator-results">
+                            <li data-id="112">
+                                <button aria-labelledby="resultLabel112" aria-describedby="resultDesc112 resultCapabilities112" tabindex="3" class="shop-item shop-item-112">
+                                    <div class="StoreResult-content">
+                                        <div class="shop-name" id="resultLabel112">
+                                            <strong>네스프레소 팝업부티크 현대백화점 천호</strong>
+                                        </div>
+                                        <div class="shop-address" id="resultDesc112">
+                                            서울 강동구 천호대로 1005 현대백화점 천호점 1층<br>
+                                            서울<br>
+                                            <div class="phone" aria-label="전화번호 :  080-734-1111&nbsp;">
+                                                Tel. 080-734-1111
+                                            </div>
+                                        </div>
+                                        <div class="Capabilities shop-attributes" id="resultCapabilities112">
+                                            <ul>
+                                                <li>25.43 km&nbsp;</li>
+                                                <li class="Capabilities-item">
+                                                    <i class="icon icon_recycling">
+                                                        <svg viewBox="0 0 8.2 14" class="svg_recycling">
+                                                            <use xlink:href="assets/svg/sprite.svg#svg-recycling"></use>
+                                                            <use xlink:href="#svg-recycling"></use>
+                                                        </svg>
+                                                    </i>
+                                                    <span class="a11y-hidden">재활용 캡슐 수거 (B2C)&nbsp;</span>
+                                                </li>
+                                                <li class="Capabilities-item">무료 커피 시음</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="holder">
+                        <a></a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div id="map" style="width:100%; height: 100vh;"></div>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1CCvsEeWN2zyvgcL8RGZ67905NDrwOgM&callback=initMap&region=kr"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1CCvsEeWN2zyvgcL8RGZ67905NDrwOgM&libraries=places"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1CCvsEeWN2zyvgcL8RGZ67905NDrwOgM&callback=initAutocomplete&libraries=places&v=weekly"></script>
     <script>
-        function initMap() {
-            var seoul = { lat: 37.5642135 ,lng: 127.0016985 };
-            var map = new google.maps.Map(
-                document.getElementById('map'), {
-                    zoom: 12,
-                    center: seoul
+        function initAutocomplete(listener) {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: 37.55902624, lng: 126.9749014 },
+                zoom: 13,
+                mapTypeId: "roadmap",
+            });
+
+            var locations = [
+                ['서울역', 37.5546788, 126.9706069],
+                ['서울특별시청', 37.5668260, 126.9786567],
+                ['을지로입구역', 37.5660373, 126.9821930],
+                ['덕수궁', 37.5655638, 126.974894],
+            ];
+
+            var infowindow = new google.maps.InfoWindow();
+
+            var marker, i;
+
+            for (i = 0; i < locations.length; i++) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                    map: map
                 });
-            new google.maps.Marker({
-                position: seoul,
-                map: map,
-                label: "서울 중심 좌표"
+
+                google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                    return function() {
+                        infowindow.setContent(locations[i][0]);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
+            }
+
+
+            // Create the search box and link it to the UI element.
+            const input = document.getElementById("pac-input");
+            const searchBox = new google.maps.places.SearchBox(input);
+            // Bias the SearchBox results towards current map's viewport.
+            map.addListener("bounds_changed", () => {
+                searchBox.setBounds(map.getBounds());
+            });
+            let markers = [];
+            // Listen for the event fired when the user selects a prediction and retrieve
+            // more details for that place.
+            searchBox.addListener("places_changed", () => {
+                const places = searchBox.getPlaces();
+
+                if (places.length == 0) {
+                    return;
+                }
+                // Clear out the old markers.
+                markers.forEach((marker) => {
+                    marker.setMap(null);
+                });
+                markers = [];
+                // For each place, get the icon, name and location.
+                const bounds = new google.maps.LatLngBounds();
+                places.forEach((place) => {
+                    if (!place.geometry || !place.geometry.location) {
+                        console.log("Returned place contains no geometry");
+                        return;
+                    }
+                    const icon = {
+                        url: place.icon,
+                        size: new google.maps.Size(71, 71),
+                        origin: new google.maps.Point(0, 0),
+                        anchor: new google.maps.Point(17, 34),
+                        scaledSize: new google.maps.Size(25, 25),
+                    };
+                    // Create a marker for each place.
+                    markers.push(
+                        new google.maps.Marker({
+                            map,
+                            icon,
+                            title: place.name,
+                            position: place.geometry.location,
+                        })
+                    );
+
+                    if (place.geometry.viewport) {
+                        // Only geocodes have viewport.
+                        bounds.union(place.geometry.viewport);
+                    } else {
+                        bounds.extend(place.geometry.location);
+                    }
+                });
+                map.fitBounds(bounds);
+
             });
         }
     </script>
@@ -564,7 +760,6 @@
 
 <!-- script -->
 <script>
-
     jQuery(function($) {
         $("body").css("display", "none");
         $("body").fadeIn(2000);
@@ -579,21 +774,22 @@
     });
     $(document).ready(function() {
         $("#map").hide();
+        var menu_flag = true;
 
         $( '#btnSearch' ).click( function() {
             $('#video_area, #background_video,  .map_title').fadeOut();
             $('#map').fadeIn(2000);
 
-            var menu_flag = true;
             if (menu_flag) {
-                $(".box_wrap").animate(
-                    {width: '=50%'}, "slow");
+                $(".form_search").animate(
+                    {width: '-=40%'}, "slow");
                 $("#adress_input_box").animate(
-                    {left: '=300px'}, "slow");
+                    {left: '-=400px', top: '-=250px'}, "slow");
+                $("#btnSearch").hide();
                 menu_flag = false;
             }
-        } );
 
+        } );
     });
 </script>
 
