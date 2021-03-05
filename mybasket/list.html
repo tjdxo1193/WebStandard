@@ -9,24 +9,45 @@
     <title>장바구니</title>
 
     <style>
+        ul li {
+            list-style: none;
+        }
         #main {
             background: #f0f0f0;
         }
         
-        #wrap {
+        #mb_wrap {
+        }
+        #mb_body {
+            position: relative;
+            visibility: hidden;
+            width: 900px;
+            border: 1px solid #e0e0e0;
+            margin: 0 auto 70px;
+            padding: 40px 39px;
             background: #fff;
-            width: 1000px;
-            margin: 0 auto;}
+        }
+
+        .cart_title {
+            clear: both;
+            height: 45px;
+            margin-bottom: 0;
+            padding-bottom: 32px;
+            background: url(//img1a.coupangcdn.com/image/order/img_orderstep4.gif) no-repeat 0 -200px;
+        }
+
+
         
     </style>
 </head>
 <body>
 
 <div id="main">
-    <div id="wrap">
-        <div>
+    <div id="mb_wrap">
+        <div id="mb_body">
             <div>
-                <div></div>
+                <div class="cart_title">
+                </div>
                 <div>
                     <ul>
                         <li></li>
@@ -37,126 +58,7 @@
                 </div>
             </div>
         </div>
-        <table class="cartTable" summary="장바구니 상품명, 제품가격, 선택한수량, 총결제비용 정보 및 결제 상품으로 선택,해제 및 수량변경, 삭제 기능 제공표">
-            <caption class="none">장바구니</caption>
-            <colgroup><col width="50"><col width="80"><col width="*"><col width="90"><col width="90"></colgroup>
-            <thead>
-            <tr class="">
-                <th class="" scope="col">
-                    <label>
-                        <input checked="checked" class="" title="모든 상품을 결제상품으로 설정" type="checkbox">
-                        <span>&nbsp;&nbsp;전체선택</span>
-                    </label>
-                </th>
-                <th colspan="2" id="" scope="colgroup">상품정보</th>
-                <th id="" scope="col">상품금액</th>
-                <th id="" scope="col">배송비</th>
-            </tr>
-            </thead>
-            <tbody id="">
-            <tr>
-<!--                <td class="" colspan="5">-->
-<!--                    <span class="title rocket">로켓배송 상품 (로켓와우 포함)</span>-->
-<!--                    <span class="rocket-delivery-info">-->
-<!--                        <span class="rocket-free">무료배송</span>-->
-<!--                    </span>-->
-<!--                    <div class="late-dawn-delivery-message" id="lateRocketWowOverNightMessage" style="display: none"></div>-->
-<!--                </td>-->
-            </tr>
-            <tr class="" data-adult="false" data-app="" data-bundle-id="14583643538" data-bundle-type="PRODUCT" data-group-type="rocket" data-item-status="CHECKED">
-                <td class="">
-                    <input checked="checked" class="" title="필립스 SkinIQ 7000 시리즈 전기면도기 상품을 결제상품으로 설정" type="checkbox" value="14583643538">
-                </td>
-                <td class="cart-deal-item__image ">
-                    <a class="moveProduct" href="//www.coupang.com/vp/products/2041166639?vendorItemId=71456350565">
-                        <img alt="필립스 SkinIQ 7000 시리즈 전기면도기" class="product-img img" data-bundle-id="14583643538" height="78" src="//thumbnail7.coupangcdn.com/thumbnails/remote/120x120ex/image/retail/images/2020/09/01/17/0/c4da7049-1f6e-4938-8cc2-6b425e4a3d93.jpg" width="78">
-                    </a>
-                </td>
-                <td class="product-box">
-                    <div class="product-name-part">
-                        <a class="product-name moveProduct modify-color" href="//www.coupang.com/vp/products/2041166639?vendorItemId=71456350565">필립스 SkinIQ 7000 시리즈 전기면도기, S7782/65, 미드나잇 블루</a>
-                    </div>
-                    <div class="option-item modify-float" data-bundle-id="14583643538" data-dawn-only="false" data-itemid="3470012257" data-pid="2041166639" data-quantity="1" data-vendor-id="A00010028" data-vi="71456350565" data-vip="" id="71456350565">
-                        <div class="option-item-info" data-restock-notification-state="false">
-                            <div class="option-name">
-                                <span class="option-item-name" style="display:none;">필립스 SkinIQ 7000 시리즈 전기면도기, S7782/65, 미드나잇 블루</span>
-                            </div>
-                            <div class="delivery-date rocket modify-padding" style="visibility: visible;">
-                                <span class="arrive-date" style="display: inline-block;"><span class="arrive-date-txt">내일</span><span class="arrive-date-day">(토) </span><span class="arrive-date-date">3/6</span><span class="arrive-date-time"></span><span class="promise-txt"> 도착 보장 </span></span><span class="delivery-condition">(밤 12시 전 주문 시)</span><span class="delivery-message"></span>
-                                <a class="delivery-date-refresh" href="/cartView.pang"><span>새로고침</span></a>
-                                <div class="cut-off-time__end-msg">배송일정 재확인이 필요합니다.</div>
-                            </div>
-                            <p class="delivery-enterprise" style="display: none"><img alt="" src="//img1a.coupangcdn.com/image/cart/generalCart/warning_ic.png">이 상품은 <strong>로켓배송</strong>이 아닌 <strong>협력택배사</strong>가 배송하는 상품입니다.</p>
-                        </div>
-                        <div class="option-price-part" data-sale-price="239000">
-                            <span class="unit-cost" data-sale-price="239000">
-                                <span class="sr-only">제품가격</span>239,000원
-                            </span>
-                            <span class="select-select">
-                                <select class="quantity-select" data-all="true" data-quantity="1" data-url="/memberCartItem/quantity/14583643538/" title="필립스 SkinIQ 7000 시리즈 전기면도기, S7782/65, 미드나잇 블루 수량변경">
-                                    <option selected="selected" value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                            </span>
-                            <span class="select-text">
-                                <input class="quantity-text" data-all="true" data-url="/memberCartItem/quantity/14583643538/" maxlength="4" title="필립스 SkinIQ 7000 시리즈 전기면도기, S7782/65, 미드나잇 블루 수량변경" type="text" value="1">
-                                <input class="quantity-chg none" type="button" value="수량변경">
-                            </span>
-                            <span class="unit-price-area">
-                                <span class="unit-price">
-                                    <span class="sr-only">구매가격</span>239,000원
-                                </span>
-                            </span>
-                            <a class="delete-option" data-all="true" data-url="/memberCartItem/deleteItems?cartItemIds[]=14583643538&amp;itemStatus=CHECKED" href="/memberCartItem/deleteItems?cartItemIds[]=14583643538&amp;itemStatus=CHECKED"><span class="sr-only">필립스 SkinIQ 7000 시리즈 전기면도기, S7782/65, 미드나잇 블루 상품삭제</span></a>
-                        </div>
-                    </div>
-                    <div class="badge-list">
-                        <div class="badge-item option-benefit">
-                            <span class="promo-cash-benefit ">
-                                <i class="promo-cash-benefit__icon"></i>
-                                <em class="promo-cash-benefit__text">최대 2,151원 적립</em>
-                            </span>
-                        </div>
-                    </div>
-                </td>
-                <td class="unit-total-price">
-                    <div class="direct-discount-price">즉시할인가</div>
-                    <div class="unit-total-sale-price">215,100원</div>
-                    <img alt="로켓배송" class="vendor-badge rocket" height="14" src="//img1a.coupangcdn.com/image/badges/rocket/rocket_logo.png" width="56">
-                    <img alt="로켓배송" class="rocket-wow" height="14" src="//image8.coupangcdn.com/image/badges/falcon/v1/web/rocketwow-bi-16@2x.png" width="56">
-                </td>
-                <td class="delivery-fee" headers="th-delivery-fee" rowspan="1">
-                    <span class="delivery-fee__free">무료</span>
-                </td>
-            </tr>
-            <tr class="special-gift-area" style="display: none;">
-            </tr>
-            <tr class="bundle-price-total">
-                <td colspan="5">
-                    <div class="rocket-tooltip" id="rocket-tooltip" style="display: block; right: 443px;">
-                        <div class="rocket-info" data-member-ship="LOYALTY" id="rocket-info">다른 <a class="link addRocketItem logging" href="//www.coupang.com/np/campaigns/82">로켓배송 상품 (로켓와우 포함)</a>을 추가해도 함께 <em>무료배송</em> 가능!</div>
-                        <div class="arrow"></div>
-                    </div>
-                    <span class="rocket-total-price-area">
-                        <h3 class="sr-only">로켓배송상품 주문금액 정보</h3>
-                        상품가격 <span class="total-product-price number">215,100</span>원 <span class="coupon-area">
-                        <span class="symbol symbol-plus"><span class="sr-only">더하기</span></span>
-                        배송비 <span class="delivery-charge" id="rocket-delivery-charge"><strong>무료</strong></span>
-                        <span class="symbol symbol-equal">
-                            <span class="sr-only">결과는
-                            </span>
-                        </span>
-                        주문금액
-                        <span class="total-order-price number">215,100</span>원
-                    </span>
-                    </span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+
         <div></div>
         <div></div>
         <div></div>
