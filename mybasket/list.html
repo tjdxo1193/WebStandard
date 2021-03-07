@@ -9,32 +9,48 @@
     <title>장바구니</title>
 
     <style>
+        *
+        {
+            margin: 0px;
+        }
         ul li {
             list-style: none;
         }
         #main {
-            background: #f0f0f0;
+            /*background: #f0f0f0;*/
+            background: #000;
         }
         
         #mb_wrap {
-        }
-        #mb_body {
-            position: relative;
-            visibility: hidden;
-            width: 900px;
-            border: 1px solid #e0e0e0;
-            margin: 0 auto 70px;
-            padding: 40px 39px;
+            width: 980px;
+            height: 1157px;
+            margin: 0px auto;
             background: #fff;
         }
 
-        .cart_title {
-            clear: both;
-            height: 45px;
-            margin-bottom: 0;
-            padding-bottom: 32px;
-            background: url(//img1a.coupangcdn.com/image/order/img_orderstep4.gif) no-repeat 0 -200px;
+        #mb_wrap .cart_header {
+            background: #000;
+            width: 980px;
+            height: 72px;
+            margin: 0px auto;
         }
+
+        #mb_wrap .cart_header > a {
+            float: left;
+            padding: 20px 0 10px;
+        }
+
+        #mb_wrap .cart_header > a > img {
+            width: 130px;
+            height:  32px;
+            color: #000;
+        }
+
+        #mb_body {
+
+        }
+
+
 
 
         
@@ -44,9 +60,14 @@
 
 <div id="main">
     <div id="mb_wrap">
+        <div class="cart_header">
+            <a href="#"><img src="./img/javapressologo.png" alt="로고입니다"></a>
+        </div>
         <div id="mb_body">
             <div>
                 <div class="cart_title">
+                    <img src="./img/cart.png" alt="carticon">
+                    <h1 style=" display: inline; font-size:28px;">장바구니</h1>
                 </div>
                 <div>
                     <ul>
