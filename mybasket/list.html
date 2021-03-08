@@ -6,6 +6,8 @@
     <meta content="웹 표준을 준수한 사이트입니다." name="description" />
     <meta content="웹표준, 웹접근성, 사이트 만들기" name="keywords" />
     <meta content="intellij" name="generator" />
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>장바구니</title>
 
     <style>
@@ -16,16 +18,20 @@
         ul li {
             list-style: none;
         }
-        #main {
+        #middle {
             /*background: #f0f0f0;*/
             background: #000;
+            height: 900px;
         }
         
         #mb_wrap {
             width: 980px;
-            height: 1157px;
+            height: fit-content;
             margin: 0px auto;
             background: #fff;
+            border-top: #986f38 solid 3px;
+            border-bottom: #95999c solid 2px;
+            border-right: #95999c solid 2px;
         }
 
         #mb_wrap .cart_header {
@@ -33,6 +39,9 @@
             width: 980px;
             height: 72px;
             margin: 0px auto;
+            border-bottom: #986f38 solid 5px;
+            border-left: #000 solid 2px;
+            border-right: #000 solid 2px;
         }
 
         #mb_wrap .cart_header > a {
@@ -50,41 +59,404 @@
 
         }
 
+        #mb_body .mb_body_header {
+            margin: 20px;
+        }
+
+        #mb_body .mb_body_header .cart_title {
+            display: inline
+        }
+
+        #mb_body .mb_body_header .cart_title h1 {
+            display: inline;
+            font-size:28px;
+        }
+
+        #mb_body .mb_body_header .mb_list_header {
+            display: inline;
+        }
+
+        #mb_body .mb_body_header .mb_list_header .mb_list_ul {
+            float: right;
+            margin-top: 10px
+        }
+
+        .mb_list_header .mb_list_ul .mb_list_item {
+            float: left
+        }
+
+        .mb_list_header .mb_list_ul .mb_list_item h3{
+            display: inline;
+            font-weight: bold;
+            font-size: 20px;
+            color: #999
+        }
+
+        .mb_list_header .mb_list_ul .mb_list_item h2{
+            font-weight: normal;
+            display: inline;
+            font-size:20px;
+            color: #999
+        }
+
+        .mb_list_header .mb_list_ul .mb_list_item h4{
+            display: inline;
+            font-size:20px;
+            color: deepskyblue;
+            font-weight: bold;
+        }
+
+        .mb_list_header .mb_list_ul .mb_list_item h5{
+            display: inline;
+            font-size:20px;
+            font-weight: bold;
+        }
+
+        .mb_list_header .mb_list_ul .mb_list_item img{
+            width: 16px;
+            height: 16px;
+        }
 
 
 
-        
     </style>
 </head>
 <body>
+<header id="top">
+    <div id="header">
+        <div class="top_wrapper">
+            <div class="header_top">
+                <div class="hlogo">
+                    <a class="logo_linked_home" href="#">
+                        <img alt="로고" class="header_logo" height="30px" src="./img/javapressologo.png" width="170px" />
+                    </a>
+                    <!-- 헤더 로고 -->
+                </div>
+                <div class="header_customer">
+                    <div class="header_login">
+                        <button data-toggle="dropdown" class="LoginDropdownButton dropdown-toggle" class="LoginDropdownButton" id="hloginbtn" aria-expanded="false">
+                            로그인 하기
+                            <!--aria-expanded="false"-->
+                        </button>
+                    </div>
+                    <div class="header_join">
+                        <button class="JoinDropdownButton" id="hjoinbtn">
+                            회원가입은 여기에서
+                            <!--aria-expanded="false"-->
+                        </button>
+                    </div>
+                </div>
+                <!-- 헤더 커스텀(로그인, 회원가입) -->
+            </div>
+        </div>
+        <nav class="header_navbar">
+            <div class="nav_wrap">
+                <ul class="nav_menu">
+                    <li class="navbar_Item">
+                        <a class="navbar_anchor" href="#">
+                            <div class="navbar_element">
+                                <div class="navbar_title">소개</div>
+                            </div>
+                        </a>
+                        <span class="VisuallyHidden">
+                  <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
+                    서브 메뉴 소개 열기
+                  </button>
+                </span>
+                    </li>
+                    <li class="navbar_Item">
+                        <a class="navbar_anchor" href="#">
+                            <div class="navbar_element">
+                    <span class="navbar_icon" style="width: 30px; height: 20px;">
+                    </span>
+                                <div class="navbar_title">원두추천</div>
+                            </div>
+                        </a>
+                        <span class="VisuallyHidden">
+                  <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
+                    서브 메뉴 원두추천 열기
+                  </button>
+                </span>
+                    </li>
+                    <li class="navbar_Item">
+                        <a class="navbar_anchor" href="#">
+                            <div class="navbar_element">
+                    <span class="navbar_icon" style="width: 30px; height: 20px;">
+                    </span>
+                                <div class="navbar_title">머신추천</div>
+                            </div>
+                        </a>
+                        <span class="VisuallyHidden">
+                  <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
+                    서브 메뉴 머신추천 열기
+                  </button>
+                </span>
+                    </li>
+                    <li class="navbar_Item">
+                        <a class="navbar_anchor" href="#">
+                            <div class="navbar_element">
+                    <span class="navbar_icon" style="width: 30px; height: 20px;">
+                    </span>
+                                <div class="navbar_title">게시판</div>
+                            </div>
+                        </a>
+                        <span class="VisuallyHidden">
+                  <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
+                    서브 메뉴 게시판 열기
+                  </button>
+                </span>
+                    </li>
+                    <li class="navbar_Item">
+                        <a class="navbar_anchor" href="/review/list?cp=1">
+                            <div class="navbar_element">
+                <span class="navbar_icon" style="width: 30px; height: 20px;">
+                </span>
+                                <div class="navbar_title">후기</div>
+                            </div>
+                        </a>
+                        <span class="VisuallyHidden">
+              <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
+                후기 게시판 열기
+              </button>
+            </span>
+                    </li>
+                    <li class="navbar_Item">
+                        <a class="navbar_anchor" href="#">
+                            <div class="navbar_element">
+                    <span class="navbar_icon" style="width: 30px; height: 20px;">
+                    </span>
+                                <div class="navbar_title">매장찾기</div>
+                            </div>
+                        </a>
+                        <span class="VisuallyHidden">
+                  <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
+                    서브 메뉴 마장찾기 열기
+                  </button>
+                </span>
+                    </li>
+                    <li class="navbar_Item" id="nav_e-shop">
+                        <a class="navbar_anchor" href="#">
+                            <div class="navbar_element">
+                    <span class="navbar_icon" style="width: 30px; height: 20px;">
+                    </span>
+                                <div class="navbar_title">e-shop</div>
+                            </div>
+                        </a>
+                        <span class="VisuallyHidden">
+                  <button aria-expanded="false" class="navbar_button" tabindex="-1" type="button">
+                    서브 메뉴 e-shop 열기
+                  </button>
+                </span>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
 
-<div id="main">
+<main id="middle">
     <div id="mb_wrap">
         <div class="cart_header">
             <a href="#"><img src="./img/javapressologo.png" alt="로고입니다"></a>
         </div>
         <div id="mb_body">
-            <div>
+            <div class="mb_body_header">
                 <div class="cart_title">
                     <img src="./img/cart.png" alt="carticon">
-                    <h1 style=" display: inline; font-size:28px;">장바구니</h1>
+                    <h1>장바구니</h1>
                 </div>
-                <div>
+                <div class="mb_list_header">
+                    <ul class="mb_list_ul">
+                        <li class="mb_list_item"><h3>01</h3><h2> 옵션선택 &nbsp;</h2></li>
+                        <li class="mb_list_item"><h4>&nbsp;02</h4><h5> 장바구니</h5>
+                            <img src="./img/arow.png" alt="화살표"></li>
+                        <li class="mb_list_item"><h3>&nbsp;03</h3><h2> 주문/결제 &nbsp;</h2></li>
+                        <li class="mb_list_item"><h3>&nbsp;04</h3><h2> 주문완료 &nbsp;</h2></li>
+                    </ul>
+                </div>
+            </div>
+            <div style=" margin: 20px; background: #eee; height: 30px; border-top: #000 solid 1px; border-bottom: #000 solid 1px">
+                <ul>
+                    <li style="float:left; margin-top: 4px; margin-left: 20px;"><input type="checkbox"><h5 style="margin-left: 10px; font-weight: bold; font-size: 13px; display: inline">전체선택</h5></li>
+                    <li style="float:left; margin-top: 4px; margin-left: 350px;"><h5 style=" font-weight: bold; font-size: 13px; display: inline">상품정보</h5></li>
+                    <li style="float:right; margin-top: 4px; margin-right: 40px;"><h5 style=" font-weight: bold; font-size: 13px; display: inline">배송비</h5></li>
+                    <li style="float:right; margin-top: 4px; margin-right: 60px;"><h5 style=" font-weight: bold; font-size: 13px; display: inline">상품금액</h5></li>
+                </ul>
+            </div>
+        </div>
+        <div style="height: 120px; border-top: #95999c solid 1px; border-bottom: #95999c solid 1px; margin: 20px;" class="mb_product_list">
+            <div class="mb_product_info">
+                <input class="mb_product_cb" style="float:left;" type="checkbox">
+                <div class="mb_product_img" style="float:left; width: 120px; height: 120px;">
+                    <a class="mb_product_link" href="#">
+                        <img style="margin: 21px; width: 78px; height: 78px;" src="./img/cart.png" alt="상품입니다.">
+                    </a>
+                </div>
+                <ul class="mb_product_ul" style="float:left; width: 588px; height: 120px;">
+                    <li class="mb_product_item_info" style="float:left; padding-top: 20px; border-bottom: #95999c solid 1px; border-right: #95999c solid 1px; width: 588px; height: 40px;"><a href="#" style="display: inline"><h3 id="mb_product_name" style="display: inline; font-weight: bold; font-size: 16px;">브리타 막스트라플러스 카트리지 정수기 필터, 3개</h3></a></li>
+                    <li class="mb_product_item_info" style="float: left; padding-top: 10px; width: 588px; border-right: #95999c solid 1px;  height: 50px;">
+                        <h5 id="mb_product_arrival_date" style="display: inline; float:left; margin-right: 100px;">금요일 3/25 도착 예정</h5>
+                        <button style="float:right; margin-right: 10px;">x&nbsp;</button>
+                        <h6 id="mb_product_total_price" style="display: inline; float:right;">&nbsp;19,000원&nbsp;</h6>
+                        <select id="mb_item_amount" style="width: 52px; display: inline-block; float:right; margin-right: 50px; ">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        <h6 id="mb_product_price" style="display: inline; float:right;">&nbsp;19,000원&nbsp;</h6>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="mb_product_item_info" style="width: 90px; height: 120px; float:right;">
+                        <h5 id="mb_product_shipment_price">0원</h5>
+                        <h5>묶음배송추가</h5><img src="./img/arow.png" alt="화살표">
+                    </li>
+
+                    <li class="mb_product_item_info" style="width: 90px; height: 120px; float:right; border-right: #95999c solid 1px;">
+                        <h5 class="mb_product_total_price">0원</h5>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div>
+                <h4>총 상품가격 </h4><h3> 0&nbsp;원 </h3> <h3> + </h3>
+                <h4> 총 배송비 </h4><h3> 0&nbsp;원 </h3> <h3> = </h3>
+                <h4> 총 주문금액</h4><h2> 0&nbsp;원 </h2>
+            </div>
+        </div>
+        <div>
+            <button>계속 쇼핑하기</button>
+            <button>구매하기</button>
+        </div>
+    </div>
+</main>
+
+<footer id="bottom" class="bg-black">
+    <div id="footer" class="bg-black footer_container">
+        <div class="footer_top bg-black"></div>
+        <div class="footer_block bg-black">
+            <div class="footer_bar">
+                <div class="footer_init">
+                    <h3 class="VisuallyHidden">언어 및 국가 선택</h3>
+                    <span class="VisuallyHidden">현재 대한민국 웹사이트에 접속 중이십니다. 국가 변경을 원하시면,
+              여기를 클릭하세요.</span>
+                    <span class="contries_flag"><img src="./img/base/south-korea.png" /></span>
+                    <div class="languageswitcher">
+                        <form class="languageswitcher_frm" action="" method="post">
+                            <select class="countries_selection" style="box-sizing: border-box !important;">
+                                <option value="kor">한국어</option>
+                                <option value="eng">English</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer_links">
+                    <h3 class="VisuallyHidden">웹사이트 링크</h3>
+                    <ul class="footerline1">
+                        <li class="footerline_item">
+                            <a class="footerline_item_link" href="#" target="_blank">판매이용약관
+                                <span class="VisuallyHidden">이 링크는 새로운 창을 엽니다.
+                  </span>
+                            </a>
+                        </li>
+                        <li class="footerline_item">
+                            <a class="footerline_item_link" href="#">개인정보 처리방침
+                            </a>
+                        </li>
+                        <li class="footerline_item">
+                            <a class="footerline_item_link" href="#">쿠키 </a>
+                        </li>
+                        <li class="footerline_item">
+                            <a class="footerline_item_link" href="#">고객지원 </a>
+                        </li>
+                        <li class="footerline_item">
+                            <a class="footerline_item_link" href="#" target="_blank">자바프레소 프로페셔널
+                                <span class="VisuallyHidden">이 링크는 새로운 창을 엽니다.
+                  </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="footerline2">
+                        <li class="footerline_item">
+                            <a class="AccessibleLink FooterLine__item-link" href="#" target="_blank">커피 레시피
+                                <span class="VisuallyHidden">이 링크는 새로운 창을 엽니다.</span>
+                            </a>
+                        </li>
+                        <li class="footerline_item">
+                            <a class="footerline_item_link" href="#" target="_blank">용어찾기
+                                <span class="VisuallyHidden">이 링크는 새로운 창을 엽니다.
+                  </span>
+                            </a>
+                        </li>
+                        <li class="footerline_item">
+                            <a class="footerline_item_link" href="#" target="_blank">회사소개
+                                <span class="VisuallyHidden">이 링크는 새로운 창을 엽니다.</span></a>
+                        </li>
+                        <li class="footerline_item">
+                            <a class="footerline_item_link" href="#">채용</a>
+                        </li>
+                        <li class="footerline_item">
+                            <a class="footerline_item_link" href="#" target="_blank">사이트맵
+                                <span class="VisuallyHidden">이 링크는 새로운 창을 엽니다.</span></a>
+                        </li>
+                        <li class="footerline_item">
+                            <a class="footerline_item_link" href="#">웹 접근성</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div class="footer_social1">
+                    <span class="social_label">자바프레소 계정을 팔로우 하세요</span>
+                    <ul class="s_list">
+                        <li class="s_item1">
+                            <a href="#"><img src="./img/base/instagram.png" alt="인스타그램" /></a>
+                        </li>
+                        <li class="s_item1">
+                            <a href="#"><img src="./img/social/facebook.png" alt="페이스북" /></a>
+                        </li>
+                        <li class="s_item1">
+                            <a href="#"><img src="./img/social/youtube.png" alt="유튜브" /></a>
+                        </li>
+                        <li class="s_item1">
+                            <a href="#"><img src="./img/social/twitter.png" alt="트위터" /></a>
+                        </li>
+                        <li class="s_item1">
+                            <a href="#"><img src="./img/social/pinterest.png" alt="핀터레스트" /></a>
+                        </li>
+                    </ul>
+                </div>
+                <a class="footer_top_page_link" href="#top">맨 위로 가기<img src="./img/up.png" alt="#" /></a>
+                <div class="footer_copyright">
+                    <a class="footer_link" href="#" target="_blank">
+                        <img alt="logo" src="./img/javapressologo.png" />
+                        <span class="VisuallyHidden">이 링크는 새로운 창을 엽니다.
+                        </span>
+                    </a>
+                    <span> <em>Javapresso</em> S.A. 2021</span>
+                </div>
+            </div>
+            <div class="footer_local">
+                <div class="local_elements">
                     <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                        <li>상호 : 네슬레코리아 유한책임회사</li>
+                        <li>대표자 : 카스텐 퀴메</li>
+                        <li>사업자등록번호 : 110-86-10100</li>
+                        <li>통신판매업신고 : 2014-서울서대문-0247</li>
+                    </ul>
+                    <ul>
+                        <li>채무지급보증안내</li>
+                        <li>대표번호 : 080-734-1111</li>
+                        <li>이메일 : club.korea@nespresso.com</li>
+                        <li>주소 : 서울시 서대문구 충정로70 웨스트게이트타워 16층</li>
                     </ul>
                 </div>
             </div>
         </div>
-
-        <div></div>
-        <div></div>
-        <div></div>
     </div>
-</div>
-
+</footer>
 </body>
 </html>

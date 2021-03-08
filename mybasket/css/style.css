@@ -1,0 +1,497 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: white;
+    overflow-x: hidden;
+}
+
+/* 헤더영역 */
+header {
+    width: 100%;
+    height: 176px;
+}
+
+#header {
+    width: 100%;
+    height: 176px;
+    position: relative;
+    background-color: #000000;
+}
+
+.top_wrapper {
+    position: fixed;
+    background-color: #000;
+    z-index: 2002;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+}
+
+.header_top {
+    margin: 0 auto;
+    width: 996px;
+    height: 80px;
+    padding-top: 20px;
+}
+.header_top .hlogo {
+    display: inline-block;
+    width: 157px;
+    margin-top: 5px;
+}
+
+.header_top .hlogo>a {
+}
+
+.header_top .hlogo>a>img {
+    width: 157px;
+    margin-top: 5px;
+}
+
+.header_customer {
+    float: right;
+    display: flex;
+}
+
+.header_customer .header_login {
+    position: relative;
+    display: inline-block;
+    z-index: 2001;
+}
+
+.header_customer .header_login>#hloginbtn {
+    width: 230px;
+    height: 40px;
+    font-size: 0.875rem;
+    line-height: 1.2em;
+    letter-spacing: 1px;
+    border: 1px solid #fff;
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.header_customer .header_join {
+    position: relative;
+    display: inline-block;
+    margin-left: 18px;
+}
+
+.header_customer .header_join>#hjoinbtn {
+    width: 293px;
+    height: 40px;
+    font-size: 0.875rem;
+    line-height: 1.2em;
+    letter-spacing: 1px;
+    border: 1px solid #fff;
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.header_join>#hjoinbtn:hover {
+    color: black;
+    background: white;
+}
+
+.header_customer .header_login>#hloginbtn:hover {
+    color: black;
+    background: white;
+}
+
+#header>.header_navbar {
+    width: 100%;
+    height: 76px;
+    position: absolute;
+    top: 80px;
+    background-color: #1b1b1b;
+}
+
+.nav_menu {
+}
+
+.nav_wrap {
+    margin: 0 auto;
+    width: 776px;
+    height: 76px;
+}
+
+.nav_menu>.navbar_Item {
+    float: left;
+    width: 110px;
+    height: 76px;
+}
+
+.nav_menu>.navbar_Item:nth-child(n+2){
+    border-left: 1px solid #313131;
+}
+
+.nav_menu .navbar_Item .navbar_anchor {
+    position: relative;
+    display: block;
+    text-align: center;
+    color: #d5d5d5;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    background: none;
+    outline: none;
+}
+
+.nav_menu .navbar_anchor .navbar_element {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 0.8125rem;
+}
+
+.nav_menu .navbar_anchor .navbar_title {
+    font-weight: 700;
+    line-height: 1em;
+    word-wrap: normal;
+    margin-top: 30px;
+}
+
+.nav_menu>.navbar_Item:hover,
+.navbar_title:hover {
+    color: black;
+    background-color: white;
+}
+
+/* !! hover 효과가 택스트 컬러에 검은색 적용이 잘 되지 않음... !! */
+
+.VisuallyHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* //헤더 영역  */
+
+/* 푸터영역 */
+footer {}
+
+/* 푸터 너비, 높이 셋팅 */
+#footer {
+    width: 100%;
+    height: 200px;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+#footer .footer_top {
+    height: 20px;
+    margin: 0 auto;
+    width: 996px;
+}
+
+#footer .footer_block {
+    width: 100%;
+    height: 183px;
+}
+
+.footer_block .footer_bar {
+    overflow: hidden;
+    height: 68px;
+    background-color: #1b1b1b;
+    margin: 0 auto;
+    width: 996px;
+}
+
+.footer_init {
+    width: 174px;
+    height: 68px;
+    display: inline-block;
+    float: left;
+}
+
+.footer_init .contries_flag {
+    float: left;
+}
+
+.footer_init .contries_flag>img {
+    margin: 20px 18px;
+}
+
+.footer_init .languageswitcher {}
+
+.footer_init .languageswitcher .languageswitcher_frm {}
+
+.languageswitcher_frm .countries_selection {
+    padding-left: 10px;
+    border-radius: 3px;
+    margin: 13px 0px;
+    width: 103px;
+    height: 41px;
+    font-size: 0.9rem;
+    font-weight: bolder;
+}
+
+.languageswitcher_frm .countries_selection option {}
+
+.footer_links {
+    width: 800px;
+    float: left;
+}
+
+.footer_links .footerline1 {
+    display: flex;
+    justify-content: flex-end;
+    width: 800px;
+    height: 25px;
+    margin-top: 9px;
+}
+
+.footer_links .footerline2 {
+    width: 800px;
+    height: 25px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+
+.footerline1 .footerline_item {
+    color: #ccc;
+    float: left;
+}
+
+.footerline2 .footerline_item {
+    color: #ccc;
+    float: left;
+}
+
+.footerline1 .footerline_item a {
+    padding-right: 6px;
+    padding-left: 6px;
+    border-left: 1px solid #ccc;
+    color: #ccc;
+}
+
+.footerline2 .footerline_item a {
+    padding-right: 6px;
+    padding-left: 6px;
+    border-left: 1px solid #858585;
+    color: #858585;
+}
+
+.footerline1 li:nth-child(1) a {
+    border: none;
+}
+
+.footerline_item a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+.footer_bottom {
+    margin: 0 auto;
+    width: 996px;
+    height: 30px;
+}
+
+.footer_social1 {
+    margin: 10px 0px 0px 22px;
+}
+
+.footer_social1 .social_label {
+    font-size: 0.875rem;
+    color: #ccc;
+    float: left;
+}
+
+.footer_social1 .s_list {}
+
+.s_list .s_item1 {
+    float: left;
+    margin-left: 20px;
+}
+
+.footer_top_page_link {
+    float: left;
+    margin-left: 170px;
+    color: white;
+}
+
+.footer_top_page_link img {
+    width: 16px;
+    height: 16px;
+    padding: 0px 0px 0px 7px;
+}
+
+.footer_top_page_link:hover {
+    color: white;
+}
+
+.footer_copyright {
+    float: left;
+    margin-left: 90px;
+}
+
+.footer_copyright span {
+    color: #858585;
+}
+
+.footer_copyright img {
+    width: 55px;
+    height: 9px;
+    margin-right: 5px;
+}
+
+.footer_container .footer_local {
+    color: white;
+    font-size: 0.5rem;
+    clear: both;
+    position: relative;
+    width: 996px;
+    height: 40px;
+    left: 8%;
+    top: 13%;
+    margin: auto;
+}
+
+.footer_local .local_elements {
+    width: 996px;
+    height: 40px;
+}
+
+.footer_local .local_elements ul {
+    width: 996px;
+    height: 20px;
+}
+
+.local_elements ul li {
+    float: left;
+    margin-right: 20px;
+}
+
+.local_elements ul:nth-child(1) {
+    margin-left: 20px;
+}
+/* //푸터영역 */
+
+/* introduce page main 영역 */
+#middle {
+
+}
+
+.main_container .main_headimg {
+    width: 100%;
+    height: 70vw;
+    min-height: 300px;
+    max-height: 460px;
+    margin-bottom: 45px;
+    position: relative;
+}
+.main_container{
+}
+.main_container section h1 {
+    font-size: 38px;
+    margin: 50px 0 50px 0;
+    text-align: center;
+    padding: 0 50px;
+    color: #d9272e;
+    font-family: NanumGothic;
+    font-weight: 300;
+}
+.main_container section h2 {
+    font-size: 28px;
+    margin: 0 0 20px 0;
+    text-align: center;
+    padding: 0 50px;
+    color: #666;
+    line-height: 130%;
+    font-family: NanumGothic;
+    font-weight: 300;
+}
+.main_container section .headTxtBox {
+    font-size: 16px;
+    font-family: NanumGothic;
+    text-align: center;
+    margin: 30px 0 0 0;
+    line-height: 150%;
+    color: #666;
+    padding: 0 50px;
+}
+.headTxtBox p {
+    margin: 0 0 30px 0;
+}
+
+section h3 {
+    color: #d9272e;
+    font-family: NanumGothic;
+    font-weight: 300;
+    font-size: 28px;
+    margin: 0 0 20px 0;
+    line-height: 110%;
+}
+.javapresso_box .img_text_card .main_imgbox1 {
+    width: 50%;
+    height: 28vw;
+    float: left;
+    background: url(../img/intro/introbg1.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.javapresso_box .img_text_card .main_imgbox2 {
+    width: 50%;
+    height: 28vw;
+    float: right;
+    background: url(../img/intro/introbg2.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.javapresso_box .img_text_card .main_imgbox3 {
+    width: 50%;
+    height: 28vw;
+    float: left;
+    background: url(../img/intro/introbg3.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.javapresso_box .img_text_card .main_imgbox4 {
+    width: 50%;
+    height: 28vw;
+    float: right;
+    background: url(../img/intro/introbg4.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.txtBox {
+    width: calc(50% - 8vw);
+    padding: 4vw;
+    float: left;
+    height: calc(28vw - 8vw);
+    font-size: 17px;
+    line-height: 160%;
+    color: #666;
+}
+
+
+/*  화면너비 768 ~ 1200px */
+@media (max-width: 1240px) {
+
+}
+
+/*  화면너비 480 ~ 768  */
+@media (max-width: 768px) {
+
+}
+/*  화면너비 0 ~ 480  */
+@media (max-width: 480px) {
+
+}

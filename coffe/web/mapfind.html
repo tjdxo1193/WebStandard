@@ -163,6 +163,21 @@
             cursor: pointer;
         }
 
+        .cancel-btn {
+            float: left;
+            position: absolute;
+            background: url(./img/cancel.png);
+            background-size: cover;
+            width: 25px;
+            height: 25px;
+            font-size: 0;
+            margin-left: -70px;
+            margin-top: 7px;
+            cursor: pointer;
+            /*display: none;*/
+        }
+
+
         .form_search .form-submit {
             width: calc(30% - 60px);
             margin-top: 0;
@@ -291,6 +306,21 @@
 
         #target {
             width: 345px;
+        }
+
+        #results {
+            display: none;
+            position: absolute;
+            left: 10rem;
+            top: 335px;
+            width: 431px;
+            background-color: #fff;
+            height: 700px;
+            padding: 25px;
+        }
+
+        .StoreResult-content {
+            background-color: #fff;
         }
 
     </style>
@@ -479,61 +509,53 @@
                         <div class="location">
                             <label class="a11y-hidden" for="pac-input"></label>
                             <input aria-describedby="locationExplanation" autocomplete="off" class="form_text controls" id="pac-input" placeholder="주소, 우편번호, 시/도" tabindex="1" type="text" value="">
+                            <button aria-hidden="true" class="cancel-btn" tabindex="-1" type="button"></button>
                             <button aria-label="내 위치에서 가까운 매장 찾기" class="geoloc-btn activated" tabindex="2" type="button"></button>
-                            <button aria-hidden="true" class="clear-btn" tabindex="-1" type="button"></button>
                         </div>
                         <button class="form-submit" id="btnSearch" onclick="" tabindex="4" type="button"><span>검색</span></button>
                     </form>
-                </div>
-                <div class="open closed" id="results">
-                    <div aria-hidden="true" class="results-header nb-shops hidden" id="storeResultsHeader">
-                        <span>19</span> 검색 결과                            </div>
-                    <div class="results-empty loading" style="display: none;">
-                        <img alt="" src="img/loader.gif">
-                    </div>
-                    <div class="results-ctn vscroll hidden">
-                        <ul aria-labelledby="storeResultsHeader storeResultDesc" id="store-locator-results">
-                            <li data-id="112">
-                                <button aria-labelledby="resultLabel112" aria-describedby="resultDesc112 resultCapabilities112" tabindex="3" class="shop-item shop-item-112">
-                                    <div class="StoreResult-content">
-                                        <div class="shop-name" id="resultLabel112">
-                                            <strong>네스프레소 팝업부티크 현대백화점 천호</strong>
-                                        </div>
-                                        <div class="shop-address" id="resultDesc112">
-                                            서울 강동구 천호대로 1005 현대백화점 천호점 1층<br>
-                                            서울<br>
-                                            <div class="phone" aria-label="전화번호 :  080-734-1111&nbsp;">
-                                                Tel. 080-734-1111
-                                            </div>
-                                        </div>
-                                        <div class="Capabilities shop-attributes" id="resultCapabilities112">
-                                            <ul>
-                                                <li>25.43 km&nbsp;</li>
-                                                <li class="Capabilities-item">
-                                                    <i class="icon icon_recycling">
-                                                        <svg viewBox="0 0 8.2 14" class="svg_recycling">
-                                                            <use xlink:href="assets/svg/sprite.svg#svg-recycling"></use>
-                                                            <use xlink:href="#svg-recycling"></use>
-                                                        </svg>
-                                                    </i>
-                                                    <span class="a11y-hidden">재활용 캡슐 수거 (B2C)&nbsp;</span>
-                                                </li>
-                                                <li class="Capabilities-item">무료 커피 시음</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="holder">
-                        <a></a>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div id="map" style="width:100%; height: 100vh;"></div>
+    <div class="open closed" id="results">
+        <div aria-hidden="true" class="results-header nb-shops hidden" id="storeResultsHeader" style="padding-bottom: 10px">
+            <span>19</span> 검색 결과                            </div>
+        <div class="results-empty loading" style="display: none;">
+            <img alt="" src="img/loader.gif">
+        </div>
+        <div class="results-ctn vscroll hidden">
+            <ul aria-labelledby="storeResultsHeader storeResultDesc" id="store-locator-results">
+                <li data-id="112" style="border-top: solid 1px black; padding-top: 10px">
+                    <button aria-labelledby="resultLabel112" aria-describedby="resultDesc112 resultCapabilities112" tabindex="3" class="shop-item shop-item-112">
+                        <div class="StoreResult-content">
+                            <div class="shop-name" id="resultLabel112">
+                                <strong>네스프레소 팝업부티크 현대백화점 천호</strong>
+                            </div>
+                            <div class="shop-address" id="resultDesc112">
+                                서울 강동구 천호대로 1005 현대백화점 천호점 1층<br>
+                                서울<br>
+                                <div class="phone" aria-label="전화번호 :  080-734-1111&nbsp;">
+                                    Tel. 080-734-1111
+                                </div>
+                            </div>
+                            <div class="Capabilities shop-attributes" id="resultCapabilities112">
+                                <ul>
+                                    <li>25.43 km&nbsp;</li>
+                                    <li>재활용</li>
+                                    <li>무료 커피 시음</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div class="holder">
+            <a></a>
+        </div>
+    </div>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1CCvsEeWN2zyvgcL8RGZ67905NDrwOgM&callback=initMap&region=kr"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1CCvsEeWN2zyvgcL8RGZ67905NDrwOgM&libraries=places"></script>
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1CCvsEeWN2zyvgcL8RGZ67905NDrwOgM&callback=initAutocomplete&libraries=places&v=weekly"></script>
@@ -559,6 +581,7 @@
             for (i = 0; i < locations.length; i++) {
                 marker = new google.maps.Marker({
                     position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                    icon: './img/jmarker.png',
                     map: map
                 });
 
@@ -566,7 +589,14 @@
                     return function() {
                         infowindow.setContent(locations[i][0]);
                         infowindow.open(map, marker);
+                        map.setCenter(marker);
+                        map.setZoom(15);
+                        marker.setIcon('./img/jmarker1.png');
+                        setTimeout(function() {
+                            marker.setIcon('./img/jmarker.png');
+                        }, 3000);
                     }
+
                 })(marker, i));
             }
 
@@ -788,8 +818,18 @@
                 $("#btnSearch").hide();
                 menu_flag = false;
             }
+            $('#results').fadeIn(2000);
+
 
         } );
+        $('.cancel-btn').click(function(){
+            if(confirm("Want to clear?")){
+                /*Clear all input type="text" box*/
+                $('#locationForm input[type="text"]').val('');
+                /*Clear textarea using id */
+                $('#pac-input').val('');
+            }
+        });
     });
 </script>
 
